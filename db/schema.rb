@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161118034014) do
+ActiveRecord::Schema.define(version: 20161118071203) do
 
-  create_table "bank_cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "bank_cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "card_type"
     t.string   "owner_name"
     t.string   "card_num"
@@ -24,13 +24,13 @@ ActiveRecord::Schema.define(version: 20161118034014) do
     t.index ["user_id"], name: "index_bank_cards_on_user_id", using: :btree
   end
 
-  create_table "banks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "banks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "bookings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "bookings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "num_tourist"
     t.string   "contact_name"
     t.string   "contact_phone"
@@ -46,14 +46,14 @@ ActiveRecord::Schema.define(version: 20161118034014) do
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
 
-  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.integer  "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "content",    limit: 65535
     t.integer  "parent_id"
     t.integer  "review_id"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20161118034014) do
     t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
-  create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.string   "likeable_type"
     t.integer  "likeable_id"
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20161118034014) do
     t.index ["user_id"], name: "index_likes_on_user_id", using: :btree
   end
 
-  create_table "payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "code"
     t.integer  "booking_id"
     t.integer  "bank_card_id"
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20161118034014) do
     t.index ["booking_id"], name: "index_payments_on_booking_id", using: :btree
   end
 
-  create_table "places", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "places", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.integer  "place_type"
     t.integer  "parent_id"
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20161118034014) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "ratings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "ratings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "rate"
     t.integer  "user_id"
     t.string   "rateable_type"
@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 20161118034014) do
     t.index ["user_id"], name: "index_ratings_on_user_id", using: :btree
   end
 
-  create_table "reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "review_type"
     t.text     "content",     limit: 65535
     t.integer  "user_id"
@@ -114,7 +114,7 @@ ActiveRecord::Schema.define(version: 20161118034014) do
     t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
   end
 
-  create_table "tour_places", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "tour_places", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "tour_id"
     t.integer  "place_id"
     t.datetime "created_at", null: false
@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(version: 20161118034014) do
     t.index ["tour_id"], name: "index_tour_places_on_tour_id", using: :btree
   end
 
-  create_table "tours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "tours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.float    "price_per_person", limit: 24
     t.text     "description",      limit: 65535
@@ -138,16 +138,18 @@ ActiveRecord::Schema.define(version: 20161118034014) do
     t.index ["category_id"], name: "index_tours_on_category_id", using: :btree
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "phone"
     t.string   "address"
-    t.string   "email"
     t.string   "avatar"
     t.boolean  "is_admin"
-    t.string   "digest_password"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "email",               default: "", null: false
+    t.string   "encrypted_password",  default: "", null: false
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
   add_foreign_key "bank_cards", "banks"
