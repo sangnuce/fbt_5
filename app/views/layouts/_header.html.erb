@@ -1,20 +1,19 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<header class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle">
+      <button type="button" class="navbar-toggle" data-toggle="collapse"
+        data-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <%= link_to root_path do %>
+        <span class="navbar-brand fbt"><%= t "fbt" %></span>
+      <% end %>
     </div>
-    <div class="single-page-nav sticky-wrapper" id="tmNavbar">
-      <ul class="nav navbar-nav fbt">
-        <li><%= t "fbt" %></li>
-      </ul>
-      <ul class="nav navbar-nav">
+    <nav class="collapse navbar-collapse single-page-nav sticky-wrapper" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
         <li><%= link_to t(".home"), root_path %></li>
-        <li><%= link_to t(".about"), "#" %></li>
-        <li><%= link_to t(".contact"), "#" %></li>
         <% if user_signed_in? %>
           <li><%= link_to t(".logout"), destroy_user_session_path,
             method: :delete %></li>
@@ -22,6 +21,6 @@
           <li><%= link_to t(".login"), new_user_session_path %></li>
         <% end %>
       </ul>
-    </div>
+    </nav>
   </div>
-</nav>
+</header>

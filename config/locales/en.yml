@@ -1,23 +1,18 @@
 en:
-  fbt: "Framgia booking tour"
+  fbt: "Booking Tours"
   static_pages:
     home:
-      title1: "Hoi An"
-      title2: "Hoi An"
-      title3: "Paper Lantern"
-      title4: "Beatiful Woman"
-      description1: "The atmosphere in Hoi An has a touch of Hue and Da Nang."
-      description2: "How to make a paper latern"
-      description3: "Beatiful paper lantern in Hoi An, Quang Nam."
-      description4: "Beatiful woman in Hoi An, Quang Nam."
-      next: "next"
-      previous: "previous"
+      read_more: "Read more..."
+      hotest_tours: "Hotest tours"
+      cheapest_tours: "Cheapest tours"
+      popular_places: "Most popular places"
   layouts:
+    base_title: "Framgia Booking Tours"
     header:
       login: "Login"
       about: "About us"
       contact: "Contact"
-      home: "Home page"
+      home: "Homepage"
       logout: "Logout"
     footer:
       description: "Framgia Booking Tour"
@@ -29,7 +24,6 @@ en:
         No matter what your goal is the culture, the sight, or adventure
         we are here to help you create your own unique Vietnam tour.
         'Xin chào and welcome to Vietnam' "
-      copyright: "Copyright © Flash Balck Sun"
     admin:
       header:
         logo_mini: "FBS"
@@ -43,6 +37,7 @@ en:
         booking_requests: "Booking requests"
         user_reviews: "User reviews"
         revenue: "Revenue"
+      copyright: "Copyright © Flash Black Sun"
   shared:
     error_messages:
       form_error: "The form contains"
@@ -66,3 +61,30 @@ en:
         phone: "Phone: "
   flash:
     access_denied: "Access denied."
+  number:
+    currency:
+      format:
+        unit: "$"
+        delimiter: ","
+        separator: "."
+        precision: 0
+        format: "%u%n"
+  date:
+    formats:
+      default: "%d/%m/%y"
+  time:
+    zone: 7
+    formats:
+      default: "%d/%m/%Y %H:%M"
+  tours:
+    tour:
+      start_date: "Start date: "
+      price_per_person: "Price per person: "
+      end_date: "End date: "
+      num_people: "Max people: "
+  flash:
+    users:
+      user_not_found: "User not found"
+  users:
+    show:
+      title: "User profile"
