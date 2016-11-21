@@ -65,10 +65,6 @@ en:
         password_confirmation: "Password confirmation"
       edit:
         title: "Edit user"
-  flash:
-    access_denied: "Access denied."
-    add_user_success: "Add user success."
-    update_user_success: "Update user success."
   number:
     currency:
       format:
@@ -91,6 +87,9 @@ en:
       end_date: "End date: "
       num_people: "Max people: "
   flash:
+    access_denied: "Access denied."
+    add_user_success: "Add user success."
+    update_user_success: "Update user success."
     users:
       user_not_found: "User not found"
   users:

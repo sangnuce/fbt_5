@@ -3,11 +3,10 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-.customer{
-  body {
-    font-family: "brandon-grotesque", Helvetica, sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
+body.customer{
+  font-family: "brandon-grotesque", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 50px;
 
   .custom-nav{
     margin-bottom: 0;
@@ -33,12 +32,16 @@
     opacity:1;
   }
 
-  .omb_btn-facebook {background: #3b5998;}
-  .omb_btn-twitter {background: #00aced;}
-  .omb_btn-google {background: #c32f10;}
+  .omb_btn-facebook {
+    background: #3b5998;
+  }
 
-  body {
-    padding-top: 50px;
+  .omb_btn-twitter {
+    background: #00aced;
+  }
+
+  .omb_btn-google {
+    background: #c32f10;
   }
 
   h1 {
@@ -59,12 +62,12 @@
     background-color: #383E4C;
     border-color: #383E4C;
   }
-  .navbar-nav>li {
+  .navbar-nav > li {
     display: inline-block;
-    padding: 10px;
+    padding: 5px;
   }
 
-  .navbar-inverse .navbar-nav>li>a {
+  .navbar-inverse .navbar-nav > li > a {
     background: #383E4C none repeat scroll 0 0;
     border: 1px solid #646d7c;
     color: #fff ;
@@ -80,11 +83,12 @@
   .navbar-inverse .navbar-nav > li > a.current,
   .navbar-inverse .navbar-nav > li > a:hover {
     background: #49505F;
-
   }
+
   .navbar-nav > li > a{
     line-height: 15px;
   }
+
   .navbar .navbar-nav {
     display: inline-block;
     float: none;
@@ -94,7 +98,9 @@
     text-align: center;
   }
 
-  .single-page-nav {text-align: right;}
+  .single-page-nav {
+    text-align: right;
+  }
 
   .fbt {
     font-size:25px;
@@ -118,6 +124,7 @@
   }
 
   .main-menu ul{}
+
   .main-menu ul li {
     display: inline-block;
     padding: 10px;
@@ -264,7 +271,7 @@
 
 }
 
-.admin {
+body.admin {
   .navbar-nav > .user-menu > .dropdown-menu > li.user-header {
     height: auto;
   }
