@@ -30,3 +30,7 @@ en:
         we are here to help you create your own unique Vietnam tour.
         'Xin chào and welcome to Vietnam' "
       copyright: "Copyright © Flash Balck Sun"
+  shared:
+    error_messages:
+      form_error: "The form contains"
+      shared_error: "error"

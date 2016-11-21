@@ -2,7 +2,7 @@
   <h1><%= t ".title" %></h1>
   <div class="row omb_row-sm-offset-3 omb_socialButtons">
     <div class="col-xs-4 col-sm-2">
-      <%= link_to t(".facebook"), "#",
+      <%= link_to t(".facebook"), user_facebook_omniauth_authorize_path,
         class: "btn btn-md btn-block omb_btn-facebook" %>
     </div>
     <div class="col-xs-4 col-sm-2">
@@ -10,7 +10,7 @@
         class: "btn btn-md btn-block omb_btn-twitter" %>
     </div>
     <div class="col-xs-4 col-sm-2">
-      <%= link_to t(".google"), "#",
+      <%= link_to t(".google"), user_google_oauth2_omniauth_authorize_path,
         class: "btn btn-md btn-block omb_btn-google" %>
     </div>
     <div class="row omb_row-sm-offset-3 omb_loginOr">
@@ -32,7 +32,7 @@
         <%= f.password_field :password, autocomplete: "off",
           class: "form-control" %>
       </div>
-      <% if devise_mapping.rememberable? -%>
+      <% if devise_mapping.rememberable? %>
         <div class="form-group">
           <%= f.label :remember_me, class: "checkbox inline" do %>
             <%= f.check_box :remember_me %>
