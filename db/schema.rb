@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161118071203) do
+ActiveRecord::Schema.define(version: 20161120160829) do
 
   create_table "bank_cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "card_type"
@@ -53,6 +53,22 @@ ActiveRecord::Schema.define(version: 20161118071203) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "category_hierarchies", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "ancestor_id",   null: false
+    t.integer "descendant_id", null: false
+    t.integer "generations",   null: false
+    t.index ["ancestor_id", "descendant_id"], name: "index_category_hierarchies_on_ancestor_id_and_descendant_id", unique: true, using: :btree
+    t.index ["descendant_id"], name: "index_category_hierarchies_on_descendant_id", using: :btree
+  end
+
+  create_table "comment_hierarchies", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "ancestor_id",   null: false
+    t.integer "descendant_id", null: false
+    t.integer "generations",   null: false
+    t.index ["ancestor_id", "descendant_id"], name: "index_comment_hierarchies_on_ancestor_id_and_descendant_id", unique: true, using: :btree
+    t.index ["descendant_id"], name: "index_comment_hierarchies_on_descendant_id", using: :btree
+  end
+
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "content",    limit: 65535
     t.integer  "parent_id"
@@ -84,8 +100,17 @@ ActiveRecord::Schema.define(version: 20161118071203) do
     t.index ["booking_id"], name: "index_payments_on_booking_id", using: :btree
   end
 
+  create_table "place_hierarchies", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "ancestor_id",   null: false
+    t.integer "descendant_id", null: false
+    t.integer "generations",   null: false
+    t.index ["ancestor_id", "descendant_id"], name: "index_place_hierarchies_on_ancestor_id_and_descendant_id", unique: true, using: :btree
+    t.index ["descendant_id"], name: "index_place_hierarchies_on_descendant_id", using: :btree
+  end
+
   create_table "places", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
+    t.string   "picture"
     t.integer  "place_type"
     t.integer  "parent_id"
     t.datetime "created_at", null: false
@@ -128,13 +153,15 @@ ActiveRecord::Schema.define(version: 20161118071203) do
     t.float    "price_per_person", limit: 24
     t.text     "description",      limit: 65535
     t.integer  "num_people"
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.boolean  "status"
-    t.float    "discount",         limit: 24
+    t.date     "start_date"
+    t.date     "end_date"
+    t.boolean  "status",                         default: true
+    t.float    "discount",         limit: 24,    default: 0.0
+    t.string   "picture"
+    t.float    "rating",           limit: 24,    default: 0.0
     t.integer  "category_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
     t.index ["category_id"], name: "index_tours_on_category_id", using: :btree
   end
 
