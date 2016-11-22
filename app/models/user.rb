@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_many :bank_cards
 
   scope :all_customer, ->{where is_admin: false}
+  scope :order_desc, ->{order created_at: :desc}
 
   class << self
     def from_omniauth auth

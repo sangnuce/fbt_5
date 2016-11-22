@@ -59,8 +59,16 @@ en:
         placeholder_user: "Enter email to search"
         name_or_email: "Name or email: "
         phone: "Phone: "
+      new:
+        title: "Add user"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+      edit:
+        title: "Edit user"
   flash:
     access_denied: "Access denied."
+    add_user_success: "Add user success."
+    update_user_success: "Update user success."
   number:
     currency:
       format:
