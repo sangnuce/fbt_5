@@ -1,175 +1,194 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
-body {
-  font-family: "brandon-grotesque", Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
+.customer{
+  body {
+    font-family: "brandon-grotesque", Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
 
-.custom-nav{
-  margin-bottom: 0;
-}
+  .custom-nav{
+    margin-bottom: 0;
+  }
 
-@media (min-width: 768px) {
-  .omb_row-sm-offset-3 div:first-child[class*="col-"] {
-    margin-left: 25%;
+  @media (min-width: 768px) {
+    .omb_row-sm-offset-3 div:first-child[class*="col-"] {
+      margin-left: 25%;
+    }
+  }
+
+  .omb_authTitle {
+    text-align: center;
+    line-height: 300%;
+  }
+
+  .omb_socialButtons a {
+    color: white;
+    opacity:0.9;
+  }
+  .omb_socialButtons a:hover {
+    color: white;
+    opacity:1;
+  }
+
+  .omb_btn-facebook {background: #3b5998;}
+  .omb_btn-twitter {background: #00aced;}
+  .omb_btn-google {background: #c32f10;}
+
+  body {
+    padding-top: 60px;
+  }
+
+  h1 {
+    font-size: 3em;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  /* Navigation */
+   .navbar-inverse {
+    background-color: #383E4C;
+    border-color: #383E4C;
+  }
+  .navbar-nav>li {
+    display: inline-block;
+    padding: 10px;
+  }
+
+  .navbar-inverse .navbar-nav>li>a {
+    background: #383E4C none repeat scroll 0 0;
+    border: 1px solid #646d7c;
+    color: #fff ;
+    font-size: 18px;
+    padding: 12px 22px;
+    text-decoration: none;
+    text-transform: capitalize;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    border-radius: 2rem;
+  }
+
+  .navbar-inverse .navbar-nav > li > a.current,
+  .navbar-inverse .navbar-nav > li > a:hover {
+    background: #49505F;
+
+  }
+  .navbar-nav > li > a{
+    line-height: 15px;
+  }
+  .navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+  }
+
+  .navbar .navbar-collapse {
+    text-align: center;
+  }
+
+  .single-page-nav {text-align: right;}
+
+  .fbt {
+    font-size:25px;
+    color: #FFFFFF;
+    margin-right: 20%;
+  }
+  /* End Navigation*/
+
+  /* Start Main Menu */
+  ul#menu {
+    background: #40475A none repeat scroll 0 0;
+    padding: 6px;
+    position: fixed;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    z-index: 999;
+  }
+
+  .main-menu {
+    margin-top: -234px;
+  }
+
+  .main-menu ul{}
+  .main-menu ul li {
+    display: inline-block;
+    padding: 10px;
+  }
+
+  .main-menu ul li a {
+    background: #383E4C none repeat scroll 0 0;
+    border: 1px solid #646d7c;
+    color: #fff;
+    font-size: 20px;
+    padding: 5px 20px;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+
+  /*.main-menu ul li.active a,*/
+  .main-menu ul li a:focus,
+  .main-menu ul li a:hover {
+    background: #49505F;
+  }
+
+  .header-content  h1 {
+    color: #fff;
+    font-size: 70px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px #000;
+  }
+
+  .header-content h4 {
+    color: #fff;
+    font-size: 25px;
+    text-shadow: 1px 1px #333;
+  }
+  /* End Header CSS */
+
+  /* Start Footer CSS */
+  .footer-content  h1 {
+    color: #666;
+    font-size: 32px;
+    font-style: italic;
+    margin-bottom: 25px;
+    margin-top: 35px;
+  }
+
+  .footer-content  p {
+    color: #999;
+    font-style: italic;
+    margin-bottom: 30px;
+  }
+
+  .copy {
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 30px;
+    margin-top: 10px;
   }
 }
 
-.omb_authTitle {
-  text-align: center;
-  line-height: 300%;
-}
+.admin {
+  .navbar-nav > .user-menu > .dropdown-menu > li.user-header {
+    height: auto;
+  }
 
-.omb_socialButtons a {
-  color: white;
-  opacity:0.9;
-}
-.omb_socialButtons a:hover {
-  color: white;
-  opacity:1;
-}
+  .button-add {
+    margin-bottom: 15px;
+  }
 
-.omb_btn-facebook {background: #3b5998;}
-.omb_btn-twitter {background: #00aced;}
-.omb_btn-google {background: #c32f10;}
-
-body {
-  padding-top: 60px;
-}
-
-h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-/* Navigation */
- .navbar-inverse {
-  background-color: #383E4C;
-  border-color: #383E4C;
-}
-.navbar-nav>li {
-  display: inline-block;
-  padding: 10px;
-}
-
-.navbar-inverse .navbar-nav>li>a {
-  background: #383E4C none repeat scroll 0 0;
-  border: 1px solid #646d7c;
-  color: #fff ;
-  font-size: 18px;
-  padding: 12px 22px;
-  text-decoration: none;
-  text-transform: capitalize;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  border-radius: 2rem;
-}
-
-.navbar-inverse .navbar-nav > li > a.current,
-.navbar-inverse .navbar-nav > li > a:hover {
-  background: #49505F;
-
-}
-.navbar-nav > li > a{
-  line-height: 15px;
-}
-.navbar .navbar-nav {
-  display: inline-block;
-  float: none;
-}
-
-.navbar .navbar-collapse {
-  text-align: center;
-}
-
-.single-page-nav {text-align: right;}
-
-.fbt {
-  font-size:25px;
-  color: #FFFFFF;
-  margin-right: 20%;
-}
-/* End Navigation*/
-
-/* Start Main Menu */
-ul#menu {
-  background: #40475A none repeat scroll 0 0;
-  padding: 6px;
-  position: fixed;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  z-index: 999;
-}
-
-.main-menu {
-  margin-top: -234px;
-}
-
-.main-menu ul{}
-.main-menu ul li {
-  display: inline-block;
-  padding: 10px;
-}
-
-.main-menu ul li a {
-  background: #383E4C none repeat scroll 0 0;
-  border: 1px solid #646d7c;
-  color: #fff;
-  font-size: 20px;
-  padding: 5px 20px;
-  text-decoration: none;
-  text-transform: capitalize;
-}
-
-/*.main-menu ul li.active a,*/
-.main-menu ul li a:focus,
-.main-menu ul li a:hover {
-  background: #49505F;
-}
-
-.header-content  h1 {
-  color: #fff;
-  font-size: 70px;
-  text-transform: uppercase;
-  text-shadow: 2px 2px #000;
-}
-
-.header-content h4 {
-  color: #fff;
-  font-size: 25px;
-  text-shadow: 1px 1px #333;
-}
-/* End Header CSS */
-
-/* Start Footer CSS */
-.footer-content  h1 {
-  color: #666;
-  font-size: 32px;
-  font-style: italic;
-  margin-bottom: 25px;
-  margin-top: 35px;
-}
-
-.footer-content  p {
-  color: #999;
-  font-style: italic;
-  margin-bottom: 30px;
-}
-
-.copy {
-  color: #666;
-  font-size: 12px;
-  margin-bottom: 30px;
-  margin-top: 10px;
+  .user-avatar .user-image{
+    width: 45px;
+    height: 45px;
+  }
 }
 
 #error_explanation {

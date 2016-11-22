@@ -1,7 +1,12 @@
+source "https://rails-assets.org/" do
+  gem "rails-assets-adminlte"
+end
+
 source "https://rubygems.org"
 
 gem "rails", "~> 5.0.0", ">= 5.0.0.1"
 gem "mysql2", ">= 0.3.18", "< 0.5"
+gem "font-awesome-sass"
 gem "closure_tree"
 gem "bootstrap-sass", "~> 3.3.6"
 gem "puma", "~> 3.0"
@@ -11,6 +16,11 @@ gem "coffee-rails", "~> 4.2"
 gem "jquery-rails"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
+gem "cancancan", "~> 1.10"
+gem "config"
+gem "will_paginate", "3.1.0"
+gem "bootstrap-will_paginate", "0.0.10"
+gem "ransack"
 
 group :development, :test do
   gem "byebug", platform: :mri
