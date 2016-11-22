@@ -6,7 +6,8 @@
 <div class="box-body">
   <div class="row margin-bottom-10">
     <div class="col-md-3">
-      <%= link_to t(".add_user"), "#", class: "btn btn-primary button-add" %>
+      <%= link_to t(".add_user"), new_admin_user_path,
+        class: "btn btn-primary button-add" %>
     </div>
     <div class="col-md-9 text-right">
       <%= render "search_form" %>

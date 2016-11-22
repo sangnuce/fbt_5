@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :phone
       t.string :address
       t.string :avatar
-      t.boolean :is_admin
+      t.boolean :is_admin, default: false
 
       t.timestamps
     end
