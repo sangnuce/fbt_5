@@ -14,6 +14,19 @@ User.create! name: "Admin",
   password: "123456",
   password_confirmation: "123456"
 
+
+User.create! name: "Admin", email: "admin@gmail.com", password: "123456",
+  password_confirmation: "123456", is_admin: true, phone: "123456789"
+
+19.times do |n|
+  name  = "customer-#{n+1}"
+  email = "user-#{n+1}@gmail.com"
+  password = "password"
+  phone = "123456789"
+  User.create! name: name, email: email, password: password,
+    password_confirmation: password, phone: phone, is_admin: false
+end
+
 3.times do
   Place.create! name: Faker::Name.name
 end
