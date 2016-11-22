@@ -30,7 +30,39 @@ en:
         we are here to help you create your own unique Vietnam tour.
         'Xin chào and welcome to Vietnam' "
       copyright: "Copyright © Flash Balck Sun"
+    admin:
+      header:
+        logo_mini: "FBS"
+        logo_lg: "Flash Black Sun"
+        profile: "Profile"
+      sidebar:
+        manager: "MANAGER"
+        users: "Users"
+        categories: "Categories"
+        tours: "Tours"
+        booking_requests: "Booking requests"
+        user_reviews: "User reviews"
+        revenue: "Revenue"
   shared:
     error_messages:
       form_error: "The form contains"
       shared_error: "error"
+  admin:
+    users:
+      index:
+        title: "User managerment"
+        add_user: "Add user"
+        name: "Name"
+        email: "Email"
+        phone: "Phone"
+        avatar: "Avatar"
+        address: "Address"
+        edit: "Edit"
+        delete: "Delete"
+      search_form:
+        search: "Search"
+        placeholder_user: "Enter email to search"
+        name_or_email: "Name or email: "
+        phone: "Phone: "
+  flash:
+    access_denied: "Access denied."
