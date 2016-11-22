@@ -104,8 +104,7 @@ body.customer{
 
   .fbt {
     font-size:25px;
-    color: #FFFFFF;
-    margin-right: 20%;
+    color: #FF0;
   }
   /* End Navigation*/
 
@@ -316,6 +315,66 @@ body.customer{
         color: #000191;
       }
     }
+  }
+
+  /* show tour detail */
+  .tour_title {
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-family: "Lato", Arial, sans-serif;
+    color: #3a3a32;
+    font-weight: normal;
+  }
+
+  .review_title {
+    text-transform: capitalize;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #A1A6AA;
+    padding-top: 20px;
+  }
+
+  .custom_reviews {
+    border-top: 1px solid #6fa8dc;
+  }
+
+  .status_available {
+    border: none;
+    outline: none;
+    border-radius: 2rem;
+    padding: .1rem 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    background: #7ac483;
+  }
+
+  .status_unavailable {
+    border: none;
+    outline: none;
+    border-radius: 2rem;
+    padding: .1rem 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    background: #FF0000;
+  }
+
+  .fa-stack{
+    color:yellow;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: orange;
+  }
+
+  .review_post{
+    position: relative;
+    margin: 10px 0 45px 0;
+    padding: 10px;
+    border: 1px solid #ECF0F1;
+  }
+
+  .tour_description{
+    padding: 10px;
   }
 }
 

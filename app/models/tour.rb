@@ -7,6 +7,7 @@ class Tour < ApplicationRecord
   has_many :reviews
   has_many :tour_dates
   has_many :tour_places
+  has_many :reviews
   has_many :bookings, through: :tour_dates
   has_many :places, through: :tour_places
 

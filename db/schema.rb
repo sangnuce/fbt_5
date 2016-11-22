@@ -143,7 +143,6 @@ ActiveRecord::Schema.define(version: 20161120160829) do
 
   create_table "tour_dates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.date     "start_date"
-    t.date     "end_date"
     t.integer  "tour_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -164,6 +163,7 @@ ActiveRecord::Schema.define(version: 20161120160829) do
     t.float    "price_per_person", limit: 24
     t.text     "description",      limit: 65535
     t.integer  "num_people"
+    t.integer  "duration"
     t.boolean  "status",                         default: true
     t.float    "discount",         limit: 24,    default: 0.0
     t.string   "picture"

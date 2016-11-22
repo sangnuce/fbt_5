@@ -5,6 +5,7 @@ class CreateTours < ActiveRecord::Migration[5.0]
       t.float :price_per_person
       t.text :description
       t.integer :num_people
+      t.integer :duration
       t.boolean :status, default: true
       t.float :discount, default: 0
       t.string :picture

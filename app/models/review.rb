@@ -4,4 +4,7 @@ class Review < ApplicationRecord
 
   has_many :likes, as: :likeable
   has_many :ratings, as: :rateable
+
+  enum review_type: [:place, :food, :news]
+
 end

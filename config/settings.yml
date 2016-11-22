@@ -5,3 +5,5 @@ tours:
   popular_places: 6
 users:
   order_per_page: 10
+reviews:
+  per_pages_review: 10
