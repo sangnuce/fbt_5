@@ -1,5 +1,6 @@
 class Admin::UsersController < Admin::ApplicationController
-  load_and_authorize_resource
+
+  load_and_authorize_resource param_method: :user_params
 
   def index
     @users = User.search(search_params).result.order_desc.all_customer
@@ -7,13 +8,11 @@ class Admin::UsersController < Admin::ApplicationController
   end
 
   def new
-    @user = User.new
   end
 
   def create
-    @user = User.new user_params
     if @user.save
-      flash[:success] = t "flash.add_user_success"
+      flash[:success] = t "flash.users.add_user_success"
       redirect_to admin_users_path
     else
       render :new
@@ -25,15 +24,29 @@ class Admin::UsersController < Admin::ApplicationController
 
   def update
     if @user.update_attributes user_params
-      flash[:success] = t "flash.update_user_success"
+      if @user.current_user? current_user
+        sign_in @user, bypass: true
+        flash[:success] = t "flash.users.change_password_success"
+      else
+        flash[:success] = t "flash.users.update_user_success"
+      end
       redirect_to admin_users_path
     else
       render :edit
     end
   end
 
+  def destroy
+    if @user.destroy
+      flash[:success] = t "flash.users.user_deleted"
+      redirect_to admin_users_path
+    else
+      flash[:danger] = t "flash.users.user_cant_delete"
+    end
+  end
+
   private
-  def  search_params
+  def search_params
     params.permit :name_or_email_cont, :phone_cont
   end
 

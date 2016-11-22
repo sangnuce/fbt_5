@@ -3,6 +3,8 @@ class User < ApplicationRecord
     :rememberable, :validatable,
     :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
+  acts_as_paranoid
+
   validates :name, presence: true, length: {maximum: 50}
   validates :phone, presence: true, numericality: true,
     length: {maximum: 11, minimum: 8}
@@ -16,6 +18,10 @@ class User < ApplicationRecord
 
   scope :all_customer, ->{where is_admin: false}
   scope :order_desc, ->{order created_at: :desc}
+
+  def current_user? user
+    self == user
+  end
 
   class << self
     def from_omniauth auth

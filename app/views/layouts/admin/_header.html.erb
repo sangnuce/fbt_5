@@ -10,17 +10,17 @@
       <ul class="nav navbar-nav">
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <%= gravatar_for @user, "user-image" %>
+            <%= gravatar_for current_user, "user-image" %>
             <span class="hidden-xs"><%= current_user.name %></span>
           </a>
           <ul class="dropdown-menu">
             <li class="user-header">
-              <%= gravatar_for @user, "img-circle" %>
+              <%= gravatar_for current_user, "img-circle" %>
               <p><%= current_user.name %></p>
             </li>
             <li class="user-footer">
               <div class="pull-left">
-                <%= link_to t(".profile"), edit_admin_user_path(current_user),
+                <%= link_to t(".change_password"), edit_admin_user_path(current_user),
                   class: "btn btn-default btn-flat" %>
               </div>
               <div class="pull-right">
