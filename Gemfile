@@ -21,6 +21,7 @@ gem "config"
 gem "will_paginate", "3.1.0"
 gem "bootstrap-will_paginate", "0.0.10"
 gem "ransack"
+gem "paranoia", "~> 2.2"
 
 group :development, :test do
   gem "byebug", platform: :mri
@@ -39,4 +40,3 @@ gem "omniauth"
 gem "omniauth-facebook"
 gem "omniauth-google-oauth2"
 gem "faker", "1.6.6"
-gem "config"

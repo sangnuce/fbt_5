@@ -28,7 +28,7 @@ en:
       header:
         logo_mini: "FBS"
         logo_lg: "Flash Black Sun"
-        profile: "Profile"
+        change_password: "Change password"
       sidebar:
         manager: "MANAGER"
         users: "Users"
@@ -64,7 +64,8 @@ en:
         password: "Password"
         password_confirmation: "Password confirmation"
       edit:
-        title: "Edit user"
+        title: "Edit information"
+        button: "Submit"
   number:
     currency:
       format:
@@ -88,10 +89,16 @@ en:
       num_people: "Max people: "
   flash:
     access_denied: "Access denied."
-    add_user_success: "Add user success."
-    update_user_success: "Update user success."
+    not_found: "Not found"
     users:
       user_not_found: "User not found"
+      add_user_success: "Add user success."
+      update_user_success: "Update user success."
+      user_deleted: "User deleted."
+      user_cant_delete: "User can not delete."
+      change_password_success: "Change password success."
   users:
     show:
       title: "User profile"
+  data:
+    confirm: "Are you sure?"
