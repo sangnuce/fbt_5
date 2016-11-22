@@ -37,12 +37,12 @@ ActiveRecord::Schema.define(version: 20161120160829) do
     t.string   "contact_address"
     t.text     "description",     limit: 65535
     t.float    "total_price",     limit: 24
-    t.integer  "status"
-    t.integer  "tour_id"
+    t.integer  "status",                        default: 0
+    t.integer  "tour_date_id"
     t.integer  "user_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.index ["tour_id"], name: "index_bookings_on_tour_id", using: :btree
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.index ["tour_date_id"], name: "index_bookings_on_tour_date_id", using: :btree
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
 
@@ -139,6 +139,15 @@ ActiveRecord::Schema.define(version: 20161120160829) do
     t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
   end
 
+  create_table "tour_dates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "tour_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tour_id"], name: "index_tour_dates_on_tour_id", using: :btree
+  end
+
   create_table "tour_places", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "tour_id"
     t.integer  "place_id"
@@ -153,8 +162,6 @@ ActiveRecord::Schema.define(version: 20161120160829) do
     t.float    "price_per_person", limit: 24
     t.text     "description",      limit: 65535
     t.integer  "num_people"
-    t.date     "start_date"
-    t.date     "end_date"
     t.boolean  "status",                         default: true
     t.float    "discount",         limit: 24,    default: 0.0
     t.string   "picture"
@@ -181,7 +188,7 @@ ActiveRecord::Schema.define(version: 20161120160829) do
 
   add_foreign_key "bank_cards", "banks"
   add_foreign_key "bank_cards", "users"
-  add_foreign_key "bookings", "tours"
+  add_foreign_key "bookings", "tour_dates"
   add_foreign_key "bookings", "users"
   add_foreign_key "comments", "reviews"
   add_foreign_key "comments", "users"
@@ -191,6 +198,7 @@ ActiveRecord::Schema.define(version: 20161120160829) do
   add_foreign_key "ratings", "users"
   add_foreign_key "reviews", "tours"
   add_foreign_key "reviews", "users"
+  add_foreign_key "tour_dates", "tours"
   add_foreign_key "tour_places", "places"
   add_foreign_key "tour_places", "tours"
   add_foreign_key "tours", "categories"
