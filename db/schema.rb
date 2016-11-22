@@ -130,11 +130,13 @@ ActiveRecord::Schema.define(version: 20161120160829) do
 
   create_table "reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "review_type"
+    t.string   "title"
     t.text     "content",     limit: 65535
+    t.float    "rating",      limit: 24,    default: 0.0
     t.integer  "user_id"
     t.integer  "tour_id"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.index ["tour_id"], name: "index_reviews_on_tour_id", using: :btree
     t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
   end

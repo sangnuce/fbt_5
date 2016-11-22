@@ -3,7 +3,8 @@ class Tour < ApplicationRecord
 
   belongs_to :category
 
-  has_many :ratings
+  has_many :ratings, as: :rateable
+  has_many :reviews
   has_many :tour_dates
   has_many :tour_places
   has_many :bookings, through: :tour_dates

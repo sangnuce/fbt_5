@@ -7,19 +7,19 @@
     <table class="table table-striped table-hover table-responsive">
       <tr>
         <th><%= t ".name" %></th>
-        <td><%= @user.name %></td>
+        <td><%= current_user.name %></td>
       </tr>
       <tr>
         <th><%= t ".email" %></th>
-        <td><%= @user.email %></td>
+        <td><%= current_user.email %></td>
       </tr>
       <tr>
         <th><%= t ".phone" %></th>
-        <td><%= @user.phone %></td>
+        <td><%= current_user.phone %></td>
       </tr>
       <tr>
         <th><%= t ".address" %></th>
-        <td><%= @user.address %></td>
+        <td><%= current_user.address %></td>
       </tr>
       <tr>
         <td colspan="2" class="text-right">
