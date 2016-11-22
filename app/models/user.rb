@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :bank_cards
 
+  scope :all_customer, ->{where is_admin: false}
+
   class << self
     def from_omniauth auth
       User.find_or_create_by email: auth.info.email do |user|

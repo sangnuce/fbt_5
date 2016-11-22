@@ -3,3 +3,5 @@ tours:
   hotest_tours: 6
   cheapest_tours: 6
   popular_places: 6
+users:
+  order_per_page: 10
