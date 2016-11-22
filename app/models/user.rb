@@ -13,6 +13,8 @@ class User < ApplicationRecord
   has_many :comments
   has_many :bookings
   has_many :bank_cards
+  has_many :tour_dates, through: :bookings
+  has_many :tours, through: :tour_dates
 
   scope :all_customer, ->{where is_admin: false}
   scope :order_desc, ->{order created_at: :desc}

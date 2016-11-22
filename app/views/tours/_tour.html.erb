@@ -7,8 +7,6 @@
       <%= link_to "#", class: "tour-picture" do %>
         <h3 class="tour-name"><%= tour.name %></h3>
       <% end %>
-      <p class="col-md-6"><%= t ".start_date" %><%= l tour.start_date %></span></p>
-      <p class="col-md-6"><%= t ".end_date" %><%= l tour.end_date %></span></p>
       <p class="col-md-6"><%= t ".num_people" %><%= tour.num_people %></span></p>
       <p class="col-md-6"><%= t ".price_per_person" %>
         <span class="price"><%= number_to_currency tour.price_per_person %></span>

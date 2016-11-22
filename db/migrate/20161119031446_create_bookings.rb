@@ -7,8 +7,8 @@ class CreateBookings < ActiveRecord::Migration[5.0]
       t.string :contact_address
       t.text :description
       t.float :total_price
-      t.integer :status
-      t.belongs_to :tour, foreign_key: true
+      t.integer :status, default: 0
+      t.belongs_to :tour_date, foreign_key: true
       t.belongs_to :user, foreign_key: true
 
       t.timestamps
