@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :tours, only: :show do
     resources :reviews, only: :show
   end
+
 end

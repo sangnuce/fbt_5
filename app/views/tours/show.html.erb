@@ -1,0 +1,87 @@
+<div class="container">
+  <% provide :title, @tour.name %>
+  <h1 class="tour_title"><%= @tour.name %></h1>
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-6">
+        <p><strong><%= t ".price_per_person" %></strong>
+          <%= number_to_currency @tour.price_per_person %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <p><strong><%= t ".num_people" %></strong>
+          <%= @tour.num_people %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <p><strong><%= t ".duration" %></strong>
+          <%= t ".day", duration: @tour.duration %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p><strong><%= t ".status" %></strong>
+          <span class="status_<%= @tour.status %>">
+            <%= t "status.#{@tour.status}" %>
+          </span>
+        </p>
+      </div>
+    </div>
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a data-toggle="tab" href="#description" >
+          <%= t ".description" %>
+        </a>
+      </li>
+      <li>
+        <a data-toggle="tab" href="#booking"><%= t ".booking" %></a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div id="description"
+        class="tab-pane fade in active tour_description">
+        <p><%= @tour.description %></p>
+      </div>
+      <div id="booking" class="tab-pane fade">
+        <div class = "row" align="center">
+          <% if @tour.available? %>
+            <%= link_to t(".book_now"), "#",
+              class: "btn btn-danger " %>
+          <% else %>
+            <h3 class="status_unavailable">
+              <%= t "status.unavailable" %></h3>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="review_title"><%= t ".customer_reviews" %></h2>
+    <hr class="custom_reviews">
+    <div class="review_container">
+      <% @reviews.each do |review| %>
+        <div class="review_content">
+          <p class="review_author">
+            <i class="fa fa-star-o fa-stack" aria-hidden="true"></i>
+            <strong><%= review.user.name %></strong>
+            <%= t ".review_about" %> <%= review.review_type %>
+            <%= t ".created_at" %> <%= l review.created_at %>
+          </p>
+          <div class="review_post">
+            <p><%= review.title %></p>
+            <%= link_to t(".show_review"),
+              tour_review_path(@tour, review) %>
+          </div>
+        </div>
+      <% end %>
+      <%= will_paginate @reviews %>
+      <%= link_to t(".create_review"), "#", class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>

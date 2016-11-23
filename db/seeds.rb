@@ -36,11 +36,10 @@ end
   10.times do
     tour = category.tours.create! name: Faker::Hipster.sentence(1),
       price_per_person: 100, description: Faker::Hipster.paragraph(20),
-      num_people: 3
+      num_people: 3, duration: 3
     tour.tour_places.create! place_id: Faker::Number.between(1, 3)
     3.times do
-      tour.tour_dates.create! start_date: Time.zone.today,
-        end_date: Time.zone.tomorrow
+      tour.tour_dates.create! start_date: Time.zone.today
     end
   end
 end

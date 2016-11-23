@@ -24,6 +24,7 @@ en:
         No matter what your goal is the culture, the sight, or adventure
         we are here to help you create your own unique Vietnam tour.
         'Xin chào and welcome to Vietnam' "
+      copyright: "Copyright © Flash Black Sun"
     admin:
       header:
         logo_mini: "FBS"
@@ -37,7 +38,6 @@ en:
         booking_requests: "Booking requests"
         user_reviews: "User reviews"
         revenue: "Revenue"
-      copyright: "Copyright © Flash Black Sun"
   shared:
     error_messages:
       form_error: "The form contains"
@@ -66,6 +66,7 @@ en:
       edit:
         title: "Edit information"
         button: "Submit"
+        title: "Edit user"
   number:
     currency:
       format:
@@ -87,9 +88,29 @@ en:
       price_per_person: "Price per person: "
       end_date: "End date: "
       num_people: "Max people: "
+    show:
+      start_date: "Start date: "
+      price_per_person: "Price per person: "
+      end_date: "End date: "
+      num_people: "Max people: "
+      description: "Description"
+      booking: "Booking"
+      customer_reviews: "Customer Reviews"
+      review_about: "review about"
+      created_at: "created at"
+      show_review: "more detail"
+      status: "Status: "
+      book_now: "BOOK NOW"
+      create_review: "Create Review"
+      duration: "Duration"
+      day: "%{duration} day"
+  status:
+    available: "available"
+    unavailable: "unavailable"
   flash:
     access_denied: "Access denied."
     not_found: "Not found"
+    find_tour_fail: "Failed to find tour"
     users:
       user_not_found: "User not found"
       add_user_success: "Add user success."
