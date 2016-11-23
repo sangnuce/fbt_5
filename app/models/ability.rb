@@ -11,6 +11,7 @@ class Ability
         u == user
       end
       can [:read, :create], Comment
+      can [:read, :create], Review
     end
   end
 end
