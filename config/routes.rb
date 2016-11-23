@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: "callbacks#create"}
 
   root "static_pages#show", page: "home"
+  post "/rate" => "rater#create", as: :rate
 
   namespace :admin do
     resources :users
