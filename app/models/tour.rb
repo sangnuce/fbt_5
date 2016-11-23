@@ -1,6 +1,8 @@
 class Tour < ApplicationRecord
   enum status: {available: true, unavailable: false}
 
+  ratyrate_rateable "quality"
+
   belongs_to :category
 
   has_many :ratings, as: :rateable

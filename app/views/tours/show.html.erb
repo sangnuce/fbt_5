@@ -10,6 +10,15 @@
           <%= number_to_currency @tour.price_per_person %>
         </p>
       </div>
+      <% if @tour.average("quality").present? %>
+        <div class="col-md-6" align="right">
+          <p><strong><%= t ".average" %></strong>
+            <i class="fa fa-star ave_star" aria-hidden="true"></i>
+            <%= t ".average_rating",
+              rate: @tour.average("quality").avg %>
+          </p>
+        </div>
+      <% end %>
     </div>
     <div class="row">
       <div class="col-md-6">
@@ -34,6 +43,15 @@
         </p>
       </div>
     </div>
+    <% if user_signed_in? %>
+      <div class="row">
+        <div class="col-md-12">
+          <p><strong><%= t ".your_rating" %></strong>
+            <%= rating_for @tour, "quality" %>
+          </p>
+        </div>
+      </div>
+    <% end %>
     <ul class="nav nav-tabs">
       <li class="active">
         <a data-toggle="tab" href="#description" >
