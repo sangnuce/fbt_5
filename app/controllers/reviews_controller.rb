@@ -3,6 +3,8 @@ class ReviewsController < ApplicationController
   load_resource :review, through: :tour
 
   def show
+    @comments = @review.comments.order_desc.paginate page: params[:page],
+      per_page: Settings.reviews.comment_per_page
   end
 
   rescue_from ActiveRecord::RecordNotFound do

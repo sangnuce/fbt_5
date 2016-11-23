@@ -32,8 +32,17 @@
       </div>
     </div>
     <div class="review-comments">
-      <p class="title"><%= t ".comments" %></p>
+      <p class="title">
+        <i class="fa fa-comments-o margin-r-5"></i>
+        <%= t ".comments" %> (<%= @comments.count %>)
+      </p>
       <div class="comment-form">
+      </div>
+      <div class="comment-list">
+        <%= render @comments %>
+        <div class="text-center">
+          <%= will_paginate @comments %>
+        </div>
       </div>
     </div>
   </div>

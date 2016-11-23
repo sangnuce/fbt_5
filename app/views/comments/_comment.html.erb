@@ -1,0 +1,15 @@
+<div class="box-footer box-comments comment">
+  <div class="box-comments comment">
+    <%= gravatar_for comment.user, "direct-chat-img" %>
+    <div class="direct-chat-text">
+      <span class="username">
+        <%= comment.user.name %>
+        <span class="text-muted pull-right">
+          <%= time_ago_in_words comment.created_at
+            .in_time_zone(t "time.zone") %> <%= t ".ago" %>
+        </span>
+      </span>
+      <%= comment.content %>
+    </div>
+  </div>
+</div>
