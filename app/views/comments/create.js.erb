@@ -1,3 +1,5 @@
-$('.comment-list').prepend('<%= j render @comments.order_desc.first %>');
+$('.comment-list').html('<%= j render @comments %>');
+$('.pagination').html('<%= j will_paginate @comments %>');
+$('.comment-count').html('<%= @comments.count %>');
 $('.comment-form').html('<%= j render "comments/form" %>');
-$('.comment_content').val('');
+$('#comment_content').focus();

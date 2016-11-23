@@ -7,7 +7,8 @@ class CommentsController < ApplicationController
   def create
     @comment.user = current_user
     if @comment.save
-      @comments = @review.comments
+      @comments = @review.comments.order_desc.paginate page: params[:page],
+        per_page: Settings.reviews.comment_per_page
       @comment =  @review.comments.build
       respond_to do |format|
         format.html do
