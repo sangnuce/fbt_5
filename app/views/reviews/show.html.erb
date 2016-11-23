@@ -1,0 +1,40 @@
+<% provide :title, @review.title %>
+
+<div class="row review">
+  <div class="col-sm-3 review-information">
+    <div class="picture">
+      <%= link_to @review.tour do %>
+        <%= image_tag "hoi_an.jpg" %>
+      <% end %>
+    </div>
+    <div class="information">
+      <%= link_to @review.tour do %>
+        <p class="tour-name"><%= @review.tour.name %></p>
+      <% end %>
+      <p class="created_by"><%= t ".created_by" %>
+        <%= @review.user.name %></p>
+      <p class="created_at"><%= t ".created_at" %>
+        <%= l @review.created_at %></p>
+      <p class="rating">
+        <%= t ".rating" %> <%= @review.rating %>
+        (<%= pluralize @review.ratings.count, t(".rate") %>)
+      </p>
+      <p class="like">
+        <%= t ".liked" %> <%= pluralize @review.likes.count, t(".like") %>
+      </p>
+    </div>
+  </div>
+  <div class="col-sm-9 review-details">
+    <div class="review-content">
+      <p class="title"><%= @review.title %></p>
+      <div class="content">
+        <%= @review.content %>
+      </div>
+    </div>
+    <div class="review-comments">
+      <p class="title"><%= t ".comments" %></p>
+      <div class="comment-form">
+      </div>
+    </div>
+  </div>
+</div>

@@ -97,8 +97,25 @@ en:
       user_deleted: "User deleted."
       user_cant_delete: "User can not delete."
       change_password_success: "Change password success."
+    tours:
+      tour_not_found: "Tour not found"
+    reviews:
+      review_not_found: "Review not found"
   users:
     show:
       title: "User profile"
   data:
     confirm: "Are you sure?"
+  users:
+    show:
+      title: "User profile"
+  reviews:
+    show:
+      title: "Review details"
+      created_by: "Created by: "
+      created_at: "Created at: "
+      comments: "Comments"
+      rating: "Rating: "
+      rate: "rate"
+      liked: "Liked: "
+      like: "like"

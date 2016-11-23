@@ -8,5 +8,8 @@ Rails.application.routes.draw do
     resources :users
   end
 
-  resources :users, only: :show
+  resource :user, only: :show
+  resources :tours, only: :show do
+    resources :reviews, only: :show
+  end
 end

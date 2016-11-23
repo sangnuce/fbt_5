@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActiveRecord::RecordNotFound do
     flash[:danger] = t "flash.not_found"
-    redirect_to admin_users_path
+    redirect_to root_path
   end
 
   private
@@ -18,10 +18,6 @@ class ApplicationController < ActionController::Base
       :password, :password_confirmation, :phone, :address]
     devise_parameter_sanitizer.permit :account_update, keys: [:name, :email,
       :password, :password_confirmation, :phone, :address, :current_password]
-  end
-
-  def after_update_path_for current_user
-    user_path current_user
   end
 
   def after_sign_in_path_for current_user
