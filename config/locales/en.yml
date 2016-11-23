@@ -140,3 +140,6 @@ en:
       rate: "rate"
       liked: "Liked: "
       like: "like"
+  comments:
+    comment:
+      ago: "ago"

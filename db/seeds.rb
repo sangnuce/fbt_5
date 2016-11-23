@@ -47,7 +47,11 @@ end
 tour = Tour.first
 user = User.first
 10.times do
-  tour.reviews.create! user: user, review_type: 0,
+  review = tour.reviews.create! user: user, review_type: 0,
     title: Faker::Hipster.sentence(3),
     content: Faker::Hipster.paragraph(20)
+  10.times do
+    review.comments.create! user: user,
+    content: Faker::Hipster.paragraph(3)
+  end
 end
