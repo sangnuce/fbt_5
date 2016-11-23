@@ -272,6 +272,7 @@ body.customer{
   .review {
     padding-top: 50px;
   }
+
   .review-information {
     .picture {
       margin-bottom: 10px;
@@ -321,6 +322,11 @@ body.customer{
     }
   }
 
+  .review-form {
+    textarea {
+      resize: vertical;
+    }
+  }
   /* show tour detail */
   .tour_title {
     margin-bottom: 10px;
@@ -337,11 +343,14 @@ body.customer{
     text-transform: uppercase;
     font-weight: bold;
     color: #A1A6AA;
+    margin: 0;
     padding-top: 20px;
   }
 
   .custom_reviews {
-    border-top: 1px solid #6fa8dc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #6fa8dc;
   }
 
   .status_available {
