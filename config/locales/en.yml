@@ -122,6 +122,9 @@ en:
       tour_not_found: "Tour not found"
     reviews:
       review_not_found: "Review not found"
+    comments:
+      comment_success: "Comment added."
+      cant_add_comment: "Can't add comment."
   users:
     show:
       title: "User profile"
@@ -143,3 +146,8 @@ en:
   comments:
     comment:
       ago: "ago"
+    form:
+      please: "Please"
+      login: "login"
+      to_comment: "to comment."
+      placeholder_comment: "Type a comment"

@@ -5,6 +5,7 @@ class ReviewsController < ApplicationController
   def show
     @comments = @review.comments.order_desc.paginate page: params[:page],
       per_page: Settings.reviews.comment_per_page
+    @comment = @review.comments.build
   end
 
   rescue_from ActiveRecord::RecordNotFound do
