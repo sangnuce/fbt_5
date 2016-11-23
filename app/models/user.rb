@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   acts_as_paranoid
 
+  ratyrate_rater
+
   validates :name, presence: true, length: {maximum: 50}
   validates :phone, presence: true, numericality: true,
     length: {maximum: 11, minimum: 8}
