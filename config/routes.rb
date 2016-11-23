@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
   resource :user, only: :show
   resources :tours, only: :show do
-    resources :reviews, only: :show
+    resources :reviews, only: :show do
+      resources :comments, only: :create
+    end
   end
 
 end

@@ -14,8 +14,8 @@
               <%= image_tag "hoi_an.jpg" %>
               <div class="carousel-caption">
                 <h3 class="tour-name"><%= tour.name %></h3>
-                <p class="tour-read-more"><%= link_to t(".read_more"), "#",
-                    class: "btn text-uppercase read-more" %></p>
+                <p class="tour-read-more"><%= link_to t(".read_more"),
+                  tour_path(tour), class: "btn text-uppercase read-more" %></p>
               </div>
             </div>
           <% end %>

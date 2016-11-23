@@ -37,6 +37,7 @@
         <%= t ".comments" %> (<%= @comments.count %>)
       </p>
       <div class="comment-form">
+        <%= render "comments/form" %>
       </div>
       <div class="comment-list">
         <%= render @comments %>
