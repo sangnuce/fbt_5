@@ -2,8 +2,7 @@ class ToursController < ApplicationController
   load_resource
 
   def show
-    @reviews = @tour.reviews.order_time_desc.paginate page: params[:page],
-      per_page: Settings.reviews.per_pages_review
+    @supports = Supports::TourSupport.new tour: @tour, page: params[:page]
   end
 
   rescue_from ActiveRecord::RecordNotFound do

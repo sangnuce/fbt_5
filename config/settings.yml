@@ -12,4 +12,5 @@ ckeditor:
   max_attachment_size: 100
   max_picture_size: 3
 rates:
-  max_rate: 5
+  min_star: 0
+  max_star: 5

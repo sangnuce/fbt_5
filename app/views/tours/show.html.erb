@@ -14,7 +14,7 @@
         <p><strong><%= t ".average" %></strong>
           <i class="fa fa-star ave_star" aria-hidden="true"></i>
           <%= t ".average_rating", rate: @tour.average(:quality).avg,
-            max_rate: Settings.rates.max_rate %>
+            max_rate: Settings.rates.max_star %>
         </p>
       </div>
     <% end %>
@@ -61,7 +61,12 @@
         <div class="row">
           <div class="col-md-12">
             <p><strong><%= t ".your_rating" %></strong>
-              <%= rating_for @tour, :quality %>
+              <% if @supports.user_rated? current_user %>
+                <%= rating_for_user @tour, current_user, :quality,
+                  {readonly: true} %>
+              <% else %>
+                <%= rating_for_user @tour, current_user, :quality %>
+              <% end %>
             </p>
           </div>
         </div>
@@ -91,7 +96,7 @@
     </div>
   </div>
   <div class="review_container">
-    <% @reviews.each do |review| %>
+    <% @supports.reviews.each do |review| %>
       <div class="review_content">
         <p class="review_author">
           <i class="fa fa-star-o fa-stack" aria-hidden="true"></i>
@@ -107,7 +112,7 @@
       </div>
     <% end %>
     <div class="col-md-12 text-center">
-      <%= will_paginate @reviews %>
+      <%= will_paginate @supports.reviews %>
     </div>
   </div>
 </div>

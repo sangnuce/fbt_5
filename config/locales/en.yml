@@ -160,3 +160,9 @@ en:
       login: "login"
       to_comment: "to comment."
       placeholder_comment: "Type a comment"
+  ratyrate:
+    noRateMsg: "I'am readOnly and I haven't rated yet!"
+    hint: "hint"
+    left: "left"
+    cancel_hint: "Cancel current rating!"
+    targetFormat: "{score}"

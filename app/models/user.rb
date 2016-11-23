@@ -12,7 +12,6 @@ class User < ApplicationRecord
     length: {maximum: 11, minimum: 8}
 
   has_many :likes
-  has_many :ratings
   has_many :reviews
   has_many :comments
   has_many :bookings
