@@ -19,6 +19,7 @@ pickle-email-*.html
 .project
 /config/database.yml
 /public/uploads
+public/ckeditor_assets
 config/settings.local.yml
 config/settings/*.local.yml
 config/settings/test.yml

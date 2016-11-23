@@ -17,4 +17,5 @@
 //= require adminlte
 //= require jquery.raty
 //= require ratyrate
+//= require ckeditor/init
 //= require_tree .

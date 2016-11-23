@@ -103,7 +103,7 @@ en:
       book_now: "BOOK NOW"
       create_review: "Create Review"
       duration: "Duration"
-      day: "%{duration} day"
+      day: "day"
   status:
     available: "available"
     unavailable: "unavailable"
@@ -122,6 +122,7 @@ en:
       tour_not_found: "Tour not found"
     reviews:
       review_not_found: "Review not found"
+      create_review_success: "Create review success"
     comments:
       comment_success: "Comment added."
       cant_add_comment: "Can't add comment."
@@ -143,6 +144,8 @@ en:
       rate: "rate"
       liked: "Liked: "
       like: "like"
+    new:
+      title: "Create review"
   comments:
     comment:
       ago: "ago"
