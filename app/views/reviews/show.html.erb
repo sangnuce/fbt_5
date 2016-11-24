@@ -17,17 +17,11 @@
         <%= @review.user.name %></p>
       <p class="review_at"><strong><%= t ".review_at" %></strong>
         <%= l @review.created_at %></p>
-      <% if @review.average(:quality).present? %>
-        <p class="rating">
-          <strong><%= t ".average" %></strong>
-          <i class="fa fa-star ave_star" aria-hidden="true"></i>
-          <%= t ".average_rating", rate: @review.average(:quality).avg,
-            max_rate: Settings.rates.max_star %>
-        </p>
-      <% end %>
-      <p class="like">
-        <strong><%= t ".liked" %></strong>
-        <%= pluralize @review.likes.count, t(".like") %>
+      <p class="rating">
+        <strong><%= t ".average" %></strong>
+        <i class="fa fa-star ave_star" aria-hidden="true"></i>
+        <%= t ".average_rating", rate: @review.rating,
+          max_rate: Settings.rates.max_star %>
       </p>
     </div>
   </div>
@@ -40,8 +34,11 @@
 
       <% if user_signed_in? %>
         <div class="row">
-          <div class="col-md-12">
-            <p><strong><%= t ".your_rating" %></strong>
+          <div class="col-sm-6 review-like">
+            <%= render "likes/like" %>
+          </div>
+          <div class="col-sm-6">
+            <p class="text-right"><strong><%= t ".your_rating" %></strong>
               <% if @supports.user_rated? current_user %>
                 <%= rating_for_user @review, current_user, :quality,
                   {readonly: true} %>

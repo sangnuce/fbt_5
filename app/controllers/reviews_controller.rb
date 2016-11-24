@@ -16,7 +16,8 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @supports = Supports::ReviewSupport.new review: @review, page: params[:page]
+    @supports = Supports::ReviewSupport.new review: @review,
+      page: params[:page], user: current_user
   end
 
   rescue_from ActiveRecord::RecordNotFound do

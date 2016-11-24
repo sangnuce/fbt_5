@@ -13,6 +13,7 @@ class Ability
       end
       can [:read, :create], Comment
       can [:read, :create], Review
+      can :manage, Like
     end
   end
 end

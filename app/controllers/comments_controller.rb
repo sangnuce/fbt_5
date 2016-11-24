@@ -7,9 +7,9 @@ class CommentsController < ApplicationController
   def create
     @comment.user = current_user
     if @comment.save
-      @comments = @review.comments.order_desc.paginate page: params[:page],
-        per_page: Settings.reviews.comment_per_page
-      @comment =  @review.comments.build
+      @supports = Supports::ReviewSupport.new review: @review,
+        page: params[:page], user: current_user
+
       respond_to do |format|
         format.html do
           flash[:success] = t "flash.comment_success"

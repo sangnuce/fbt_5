@@ -41,7 +41,7 @@ module RatingForHelper
             style: "position:relative;font-size:.8rem;text-align:center;line-height:60px;"
       end
     else
-      content_tag :div, "", class: "star", data: {dimension: dimension,
+      content_tag :span, "", class: "star", data: {dimension: dimension,
         rating: avg, id: rateable_obj.id, classname: rateable_obj.class.name,
         disable_after_rate: disable_after_rate, readonly: readonly,
         enable_half: enable_half, half_show: half_show, star_count: star,
@@ -57,7 +57,7 @@ module RatingForHelper
   def imdb_style_rating_for rateable_obj, user, options = {}
     overall_avg = rateable_obj.overall_avg user
 
-    content_tag :div, "",
+    content_tag :span, "",
       style: "background-image:url(/assets/big-star.png);width:81px;height:81px;margin-top:10px;" do
         content_tag :p, overall_avg,
           style: "position:relative;line-height:85px;text-align:center;"
@@ -99,7 +99,7 @@ module RatingForHelper
       readonly = !rateable_obj.can_rate?(current_user, dimension)
     end
 
-    content_tag :div, "", class: "star", data: {dimension: dimension,
+    content_tag :span, "", class: "star", data: {dimension: dimension,
       rating: stars, id: rateable_obj.id, classname: rateable_obj.class.name,
       disable_after_rate: disable_after_rate, readonly: readonly,
       enable_half: enable_half, half_show: half_show, star_count: star,

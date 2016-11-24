@@ -26,6 +26,10 @@ class User < ApplicationRecord
     self == user
   end
 
+  def liked? likeable
+    self.likes.find_by(likeable: likeable).present?
+  end
+
   class << self
     def from_omniauth auth
       User.find_or_create_by email: auth.info.email do |user|
