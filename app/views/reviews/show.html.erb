@@ -8,19 +8,26 @@
       <% end %>
     </div>
     <div class="information">
-      <%= link_to @review.tour do %>
-        <p class="tour-name"><%= @review.tour.name %></p>
-      <% end %>
-      <p class="created_by"><%= t ".created_by" %>
-        <%= @review.user.name %></p>
-      <p class="created_at"><%= t ".created_at" %>
-        <%= l @review.created_at %></p>
-      <p class="rating">
-        <%= t ".rating" %> <%= @review.rating %>
-        (<%= pluralize @review.ratings.count, t(".rate") %>)
+      <p><strong><%= t ".review_for" %></strong>
+        <%= link_to @review.tour do %>
+          <span class="tour-name"><%= @review.tour.name %></span>
+        <% end %>
       </p>
+      <p class="review_by"><strong><%= t ".review_by" %></strong>
+        <%= @review.user.name %></p>
+      <p class="review_at"><strong><%= t ".review_at" %></strong>
+        <%= l @review.created_at %></p>
+      <% if @review.average(:quality).present? %>
+        <p class="rating">
+          <strong><%= t ".average" %></strong>
+          <i class="fa fa-star ave_star" aria-hidden="true"></i>
+          <%= t ".average_rating", rate: @review.average(:quality).avg,
+            max_rate: Settings.rates.max_rate %>
+        </p>
+      <% end %>
       <p class="like">
-        <%= t ".liked" %> <%= pluralize @review.likes.count, t(".like") %>
+        <strong><%= t ".liked" %></strong>
+        <%= pluralize @review.likes.count, t(".like") %>
       </p>
     </div>
   </div>
@@ -34,16 +41,17 @@
     <div class="review-comments">
       <p class="title">
         <i class="fa fa-comments-o margin-r-5"></i>
-        <%= t ".comments" %> (<%= @comments.count %>)
+        <%= t ".comments" %>
+        (<span class="comment-count"><%= @comments.count %></span>)
       </p>
       <div class="comment-form">
         <%= render "comments/form" %>
       </div>
       <div class="comment-list">
         <%= render @comments %>
-        <div class="text-center">
-          <%= will_paginate @comments %>
-        </div>
+      </div>
+      <div class="col-md-12 text-center pagination">
+        <%= will_paginate @comments %>
       </div>
     </div>
   </div>

@@ -6,8 +6,10 @@ tours:
 users:
   order_per_page: 10
 reviews:
-  per_pages_review: 10
-  comment_per_page: 10
+  per_pages_review: 5
+  comment_per_page: 5
 ckeditor:
   max_attachment_size: 100
   max_picture_size: 3
+rates:
+  max_rate: 5

@@ -102,8 +102,8 @@ en:
       status: "Status: "
       book_now: "BOOK NOW"
       create_review: "Create Review"
-      duration: "Duration"
-      day: "%{duration} day"
+      duration: "Duration:"
+      day: "day"
       your_rating: "Your rating: "
       average: "Average rating: "
       average_rating: "%{rate} / 5"
@@ -140,13 +140,16 @@ en:
   reviews:
     show:
       title: "Review details"
-      created_by: "Created by: "
-      created_at: "Created at: "
+      review_for: "Review for: "
+      review_by: "Review by: "
+      review_at: "Review at: "
       comments: "Comments"
       rating: "Rating: "
       rate: "rate"
       liked: "Liked: "
       like: "like"
+      average: "Average rating: "
+      average_rating: "%{rate} / %{max_rate}"
     new:
       title: "Create review"
   comments:
