@@ -1,0 +1,26 @@
+<%= form_for @payment do |f| %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <p><%= t ".payment_amount" %>
+        <%= number_to_currency @booking.total_price %>
+      </p>
+      <p><%= t ".number_tourist" %>
+        <%= @booking.num_tourist %>
+      </p>
+    </label>
+    <%= f.hidden_field :booking_id, value: @booking.id %>
+    <%= hidden_field_tag :stripeToken %>
+    <%= hidden_field_tag :stripeEmail %>
+    <%= hidden_field_tag :total_price, @booking.total_price %>
+    <%= hidden_field_tag :number_tourist, @booking.num_tourist %>
+  </article>
+
+  <button id="customButton" class="btn btn-primary">
+    <%= t ".purchase" %>
+  </button>
+<% end %>

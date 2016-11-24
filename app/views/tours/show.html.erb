@@ -75,7 +75,7 @@
     <div id="booking" class="tab-pane fade">
       <div class="row text-center">
         <% if @tour.available? %>
-          <%= link_to t(".book_now"), "#",
+          <%= link_to t(".book_now"), new_tour_booking_path(@tour),
             class: "btn btn-danger " %>
         <% else %>
           <h3 class="status_unavailable">

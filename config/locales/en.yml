@@ -114,6 +114,9 @@ en:
     access_denied: "Access denied."
     not_found: "Not found"
     find_tour_fail: "Failed to find tour"
+    find_booking_fail: "Failed to find tour booking "
+    card_error: "Card that can’t be charged for some reason"
+    payment_success: "Payment success waiting for admin to approve"
     users:
       user_not_found: "User not found"
       add_user_success: "Add user success."
@@ -135,6 +138,9 @@ en:
       like_fail: "Like fail"
       unlike_success: "Unike success"
       unlike_fail: "Unlike fail"
+    bookings:
+      create_booking_fail: "Booking failed"
+      create_booking_success: "Booking success"
   users:
     show:
       title: "User profile"
@@ -177,3 +183,18 @@ en:
     left: "left"
     cancel_hint: "Cancel current rating!"
     targetFormat: "{score}"
+  bookings:
+    new:
+      title: "Booking Form"
+      submit: "Submit"
+      description_price: "Total price: (number tourist) x"
+      price: "(price)"
+  payments:
+    new:
+      payment_amount: "Payment amount: "
+      number_tourist: "Number tourist: "
+      purchase: "Purchase now"
+  javascripts:
+    number_tourist: "Number-tourist must be number"
+    payment: "Payment"
+    tourist: "tourist"

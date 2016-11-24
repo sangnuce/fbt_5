@@ -23,6 +23,7 @@ gem "bootstrap-will_paginate", "0.0.10"
 gem "ransack"
 gem "paranoia", "~> 2.2"
 gem "ratyrate"
+gem "stripe"
 
 group :development, :test do
   gem "byebug", platform: :mri

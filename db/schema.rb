@@ -108,12 +108,13 @@ ActiveRecord::Schema.define(version: 20161123174023) do
   end
 
   create_table "payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "code"
+    t.string   "customer_token"
+    t.string   "charge_token"
+    t.string   "card_token"
+    t.string   "email"
     t.integer  "booking_id"
-    t.integer  "bank_card_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["bank_card_id"], name: "index_payments_on_bank_card_id", using: :btree
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.index ["booking_id"], name: "index_payments_on_booking_id", using: :btree
   end
 
@@ -226,7 +227,6 @@ ActiveRecord::Schema.define(version: 20161123174023) do
   add_foreign_key "comments", "reviews"
   add_foreign_key "comments", "users"
   add_foreign_key "likes", "users"
-  add_foreign_key "payments", "bank_cards"
   add_foreign_key "payments", "bookings"
   add_foreign_key "reviews", "tours"
   add_foreign_key "reviews", "users"
