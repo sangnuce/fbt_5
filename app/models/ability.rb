@@ -6,6 +6,7 @@ class Ability
     if user.is_admin?
       can :manage, User
       can [:read, :create], Comment
+      can [:read], Review
     else
       can :read, User do |u|
         u == user

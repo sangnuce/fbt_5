@@ -22,7 +22,7 @@
           <strong><%= t ".average" %></strong>
           <i class="fa fa-star ave_star" aria-hidden="true"></i>
           <%= t ".average_rating", rate: @review.average(:quality).avg,
-            max_rate: Settings.rates.max_rate %>
+            max_rate: Settings.rates.max_star %>
         </p>
       <% end %>
       <p class="like">
@@ -37,21 +37,36 @@
       <div class="content">
         <%= @review.content.html_safe %>
       </div>
+
+      <% if user_signed_in? %>
+        <div class="row">
+          <div class="col-md-12">
+            <p><strong><%= t ".your_rating" %></strong>
+              <% if @supports.user_rated? current_user %>
+                <%= rating_for_user @review, current_user, :quality,
+                  {readonly: true} %>
+              <% else %>
+                <%= rating_for_user @review, current_user, :quality %>
+              <% end %>
+            </p>
+          </div>
+        </div>
+      <% end %>
     </div>
     <div class="review-comments">
       <p class="title">
         <i class="fa fa-comments-o margin-r-5"></i>
         <%= t ".comments" %>
-        (<span class="comment-count"><%= @comments.count %></span>)
+        (<span class="comment-count"><%= @supports.comments.count %></span>)
       </p>
       <div class="comment-form">
         <%= render "comments/form" %>
       </div>
       <div class="comment-list">
-        <%= render @comments %>
+        <%= render @supports.comments %>
       </div>
       <div class="col-md-12 text-center pagination">
-        <%= will_paginate @comments %>
+        <%= will_paginate @supports.comments %>
       </div>
     </div>
   </div>
