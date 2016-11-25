@@ -1,5 +1,5 @@
-$('.comment-list').html('<%= j render @comments %>');
-$('.pagination').html('<%= j will_paginate @comments %>');
-$('.comment-count').html('<%= @comments.count %>');
+$('.comment-list').html('<%= j render @supports.comments %>');
+$('.pagination').html('<%= j will_paginate @supports.comments %>');
+$('.comment-count').html('<%= @supports.comments.count %>');
 $('.comment-form').html('<%= j render "comments/form" %>');
 $('#comment_content').focus();

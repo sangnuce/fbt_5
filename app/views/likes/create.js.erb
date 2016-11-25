@@ -1,0 +1,6 @@
+<% if flash[:success] %>
+  $('.review-like').html('<%= j render "likes/like" %>');
+  <% flash.delete :success %>
+<% else %>
+  alert('<%= flash[:danger] %>');
+<% end %>

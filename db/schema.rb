@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 20161123174023) do
     t.integer  "likeable_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.index ["likeable_id", "likeable_type"], name: "index_likes_on_likeable_id_and_likeable_type", using: :btree
     t.index ["likeable_type", "likeable_id"], name: "index_likes_on_likeable_type_and_likeable_id", using: :btree
     t.index ["user_id"], name: "index_likes_on_user_id", using: :btree
   end
