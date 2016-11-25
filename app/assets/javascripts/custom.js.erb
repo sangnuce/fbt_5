@@ -43,16 +43,18 @@ $(document).on('turbolinks:load', function(){
     }
   });
 
-  var handler = StripeCheckout.configure({
-    key: '<%= ENV["STRIPE_PUBLIC_KEY"] %>',
-    token: function(token, args) {
-      $('#stripeToken').val(token.id);
-      $('#stripeEmail').val(token.email);
-      $('#new_payment').submit();
-    }
-  });
-
   $('#customButton').on('click', function(e) {
+    e.preventDefault();
+
+    var handler = StripeCheckout.configure({
+      key: '<%= ENV["STRIPE_PUBLIC_KEY"] %>',
+      token: function(token, args) {
+        $('#stripeToken').val(token.id);
+        $('#stripeEmail').val(token.email);
+        $('#new_payment').submit();
+      }
+    });
+
     $amount = $('#total_price').val();
     $tourist = $('#number_tourist').val();
     handler.open({
@@ -60,7 +62,6 @@ $(document).on('turbolinks:load', function(){
       description: $tourist + '<%= I18n.t "javascripts.tourist" %>',
       amount: $amount*100
     });
-    e.preventDefault();
   });
 
 });

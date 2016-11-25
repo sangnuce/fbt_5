@@ -107,6 +107,8 @@ en:
       your_rating: "Your rating: "
       average: "Average rating: "
       average_rating: "%{rate} / 5"
+      please_sign_in: "Please sign-in to booking tour "
+      click_here: "click here"
   status:
     available: "available"
     unavailable: "unavailable"
@@ -141,7 +143,7 @@ en:
       unlike_fail: "Unlike fail"
     bookings:
       create_booking_fail: "Booking failed"
-      create_booking_success: "Booking success"
+      booking_success: "Booking success"
   users:
     show:
       title: "User profile"
@@ -193,12 +195,41 @@ en:
       submit: "Submit"
       description_price: "Total price: (number tourist) x"
       price: "(price)"
+    form_booking:
+      title: "Booking Form"
+      submit: "Booking now"
+      description_price: "Total price: (number tourist) x"
+      price: "(price)"
   payments:
     new:
-      payment_amount: "Payment amount: "
+      framgia: " Framgia"
+      date: "Date: "
+      from: "From"
+      admin: "Admin, Framgia"
+      admin_address: "434 Tran Khat Chan, Ha Noi"
+      admin_phone: "Phone: (084) 123-5432"
+      admin_email: "Email: bookingtour@framgia.com"
+      to: "To"
+      client_phone: "Phone: "
+      client_email: "Email: "
+      booking: "Booking"
+      booking_id: "Booking ID: "
+      payment_date: "Payment date: "
+      tour: "Tour"
+      duation: "Duration"
+      price_per_person: "Price per person"
+      start_date: "Start Date"
+      term_condition: "Terms and Conditions:"
+      condition_content: "We require full payment for all online bookings with
+        Framgia Tour Booking. The prices quoted in the website
+        www.framgiatourbooking.comare applied for direct payment by cash.
+        For Online payment, a transaction fee of 3% total booking
+        will be paid by the clients of Framgia Tour Booking."
+      payment_amount: "Payment amount"
       number_tourist: "Number tourist: "
-      purchase: "Purchase now"
+      total: "Total:"
+      submit_payment: "Submit Payment"
   javascripts:
     number_tourist: "Number-tourist must be number"
     payment: "Payment"
-    tourist: "tourist"
+    tourist: " tourist"

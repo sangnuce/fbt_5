@@ -3,6 +3,7 @@ class ToursController < ApplicationController
 
   def show
     @supports = Supports::TourSupport.new tour: @tour, page: params[:page]
+    @booking = Booking.new
   end
 
   rescue_from ActiveRecord::RecordNotFound do

@@ -3,12 +3,12 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-body.customer{
+body.customer {
   font-family: "brandon-grotesque", Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   padding-top: 50px;
 
-  .custom-nav{
+  .custom-nav {
     margin-bottom: 0;
   }
 
@@ -85,7 +85,7 @@ body.customer{
     background: #49505F;
   }
 
-  .navbar-nav > li > a{
+  .navbar-nav > li > a {
     line-height: 15px;
   }
 
@@ -122,7 +122,7 @@ body.customer{
     margin-top: -234px;
   }
 
-  .main-menu ul{}
+  .main-menu ul {}
 
   .main-menu ul li {
     display: inline-block;
@@ -315,7 +315,7 @@ body.customer{
         margin: 0;
         color: #000191;
       }
-      .comment{
+      .comment {
         background-color: #fff;
       }
 
@@ -377,20 +377,20 @@ body.customer{
     background: #FF0000;
   }
 
-  .fa-stack{
+  .fa-stack {
     color:yellow;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: orange;
   }
 
-  .review_post{
+  .review_post {
     position: relative;
     margin: 10px 0 45px 0;
     padding: 10px;
     border: 1px solid #ECF0F1;
   }
 
-  .tour_description{
+  .tour_description {
     padding: 10px;
   }
 
@@ -405,6 +405,13 @@ body.customer{
       text-decoration: underline;
     }
   }
+
+  .body-booking {
+    text-align: left;
+  }
+  .label {
+    font-size: 83%;
+  }
 }
 
 body.admin {
@@ -416,12 +423,12 @@ body.admin {
     margin-bottom: 15px;
   }
 
-  .user-avatar .user-image{
+  .user-avatar .user-image {
     width: 45px;
     height: 45px;
   }
 
-  .alert-notice{
+  .alert-notice {
     background-color: #00a65a;
     border-color: #008d4c;
     border-radius: 3px;
