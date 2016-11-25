@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
-  has_closure_tree
+  acts_as_tree order: "created_at DESC"
 
   belongs_to :review
   belongs_to :user
@@ -7,4 +7,6 @@ class Comment < ApplicationRecord
   has_many :likes, as: :likeable
 
   scope :order_desc, ->{order created_at: :desc}
+
+  validates :content, presence: true
 end

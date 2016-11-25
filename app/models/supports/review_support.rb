@@ -4,6 +4,9 @@ class Supports::ReviewSupport
     @like = params[:like]
     @page = params[:page]
     @user = params[:user]
+
+    @like = @review.likes.find_by(user: @user) || @review.likes.build
+    @parent_comment = @review.comments.find_by id: params[:parent_id]
   end
 
   def user_rated? user
@@ -11,12 +14,17 @@ class Supports::ReviewSupport
   end
 
   def comments
-    @comments = @review.comments.order_desc.paginate page: @page,
+    @comments = @review.comments.roots.order_desc.paginate page: @page,
       per_page: Settings.reviews.comment_per_page
   end
 
   def comment
-    @comment = @review.comments.build
+    @comment = @parent_comment ?
+      @parent_comment.children.build : @review.comments.build
+  end
+
+  def parent_comment
+    @parent_comment
   end
 
   def like object

@@ -1,4 +1,4 @@
-<div class="box-footer box-comments comment">
+<div class="box-footer box-comments comment" id="comment-<%= comment.id %>">
   <div class="box-comments comment">
     <%= gravatar_for comment.user, "direct-chat-img" %>
     <div class="direct-chat-text">
@@ -12,7 +12,18 @@
       <%= comment.content %>
       <p>
         <%= render "likes/like", object: comment %>
+        <%= link_to t(".reply_up"), tour_review_new_comment_path(@tour,
+          @review, comment), remote: true, class: "reply-comment" %>
+        <% unless comment.leaf? %>
+          <i><%= link_to pluralize(comment.children.count, t(".reply_down")),
+            tour_review_show_sub_comment_path(@tour, @review, comment),
+            remote: true %></i>
+        <% end %>
       </p>
+    </div>
+    <div class="sub-comment">
+      <div class="reply-<%= comment.id %>"></div>
+      <div class="sub-comment-<%= comment.id %>"></div>
     </div>
   </div>
 </div>
