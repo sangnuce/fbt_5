@@ -1,0 +1,37 @@
+$(document).on('turbolinks:load', function(){
+  $('.ckeditor').each(function(){
+    CKEDITOR.replace($(this).attr('id'));
+  });
+
+  $('.num-tourist').change(function(){
+    $num_tourist = $('.num-tourist').val();
+    $price = $('.price_per_person').val();
+    if($.isNumeric($num_tourist)){
+      $total_price = $num_tourist * $price
+      $('.total_price').val($total_price);
+    }else{
+      alert('<%= I18n.t "javascripts.number_tourist" %>');
+      $('.num-tourist').val('');
+    }
+  });
+
+  var handler = StripeCheckout.configure({
+    key: '<%= ENV["STRIPE_PUBLIC_KEY"] %>',
+    token: function(token, args) {
+      $('#stripeToken').val(token.id);
+      $('#stripeEmail').val(token.email);
+      $('#new_payment').submit();
+    }
+  });
+
+  $('#customButton').on('click', function(e) {
+    $amount = $('#total_price').val();
+    $tourist = $('#number_tourist').val();
+    handler.open({
+      name: '<%= I18n.t "javascripts.payment" %>',
+      description: $tourist + '<%= I18n.t "javascripts.tourist" %>',
+      amount: $amount*100
+    });
+    e.preventDefault();
+  });
+});

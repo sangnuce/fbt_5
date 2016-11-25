@@ -14,6 +14,7 @@ class Ability
       can [:read, :create], Comment
       can [:read, :create], Review
       can :manage, Like
+      can [:new, :create], Booking
     end
   end
 end

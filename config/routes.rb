@@ -17,6 +17,8 @@ Rails.application.routes.draw do
       resources :comments, only: :create
       resources :likes, only: [:new, :create, :destroy]
     end
+    resources :bookings, only: [:new, :create] do
+    end
   end
-
+  resources :payments, only: [:new, :create]
 end
