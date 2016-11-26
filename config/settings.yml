@@ -14,3 +14,5 @@ ckeditor:
 rates:
   min_star: 0
   max_star: 5
+bookings:
+  per_page_bookings: 10

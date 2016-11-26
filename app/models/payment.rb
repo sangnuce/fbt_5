@@ -12,4 +12,8 @@ class Payment < ApplicationRecord
     self.charge_token = charge.id
     self.customer_token = customer.id
   end
+
+  def process_refund
+    Stripe::Refund.create charge: self.charge_token
+  end
 end

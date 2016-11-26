@@ -45,7 +45,7 @@ en:
   admin:
     users:
       index:
-        title: "User managerment"
+        title: "User management"
         add_user: "Add user"
         name: "Name"
         email: "Email"
@@ -67,6 +67,31 @@ en:
         title: "Edit information"
         button: "Submit"
         title: "Edit user"
+    bookings:
+      index:
+        title: "Booking management"
+        contact_name: "Contact name"
+        contact_phone: "Contact phone"
+        contact_address: "Contact address"
+        num_tourist: "Number tourist"
+        total_price: "Total price"
+        status: "Status"
+        created_at: "Created at"
+      booking:
+        view: "Detail"
+      show:
+        title: "Booking Detail"
+        contact_name: "Contact name:"
+        contact_phone: "Contact phone:"
+        contact_address: "Contact address:"
+        num_tourist: "Number tourist:"
+        total_price: "Total price:"
+        tour_booking: "Tour booking:"
+        start_date: "Start date:"
+        status: "Status:"
+        created_at: "Created at:"
+        update_status: "Update status"
+        return: "Return"
   number:
     currency:
       format:
@@ -143,7 +168,12 @@ en:
       unlike_fail: "Unlike fail"
     bookings:
       create_booking_fail: "Booking failed"
-      booking_success: "Booking success"
+      create_booking_success: "Booking success"
+      booking_updated: "Booking request updated"
+      booking_update_fail: "Booking updated fail"
+      booking_not_found: "Canot find booking request"
+      booking_rejected: "Booking request rejected"
+      booking_approved: "Booking request approved"
   users:
     show:
       title: "User profile"
