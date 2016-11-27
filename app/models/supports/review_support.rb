@@ -1,9 +1,9 @@
 class Supports::ReviewSupport
   def initialize params
     @review = params[:review]
+    @like = params[:like]
     @page = params[:page]
     @user = params[:user]
-    @like = @review.likes.find_by(user: @user) || @review.likes.build
   end
 
   def user_rated? user
@@ -19,15 +19,20 @@ class Supports::ReviewSupport
     @comment = @review.comments.build
   end
 
-  def like
-    @like
+  def like object
+    @like = object.likes.find_or_initialize_by user: @user
   end
 
-  def like_title
+  def like_title object
+    @like = like object
     if @like.new_record?
-      I18n.t "likes.like.like_review"
+      I18n.t "likes.like.like"
     else
-      I18n.t "likes.like.unlike_review"
+      I18n.t "likes.like.unlike"
     end
+  end
+
+  def likeable
+    @like ? @like.likeable : @review
   end
 end

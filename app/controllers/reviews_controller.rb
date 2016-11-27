@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     if @review.save
       flash[:success] = t "flash.reviews.create_review_success"
-      redirect_to @tour
+      redirect_to tour_review_path(@tour, @review)
     else
       render :new
     end

@@ -167,8 +167,8 @@ en:
       title: "Create review"
   likes:
     like:
-      like_review: "Like this review"
-      unlike_review: "Unlike this review"
+      like: "Like"
+      unlike: "Unlike"
   comments:
     comment:
       ago: "ago"

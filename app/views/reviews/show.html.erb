@@ -32,11 +32,11 @@
         <%= @review.content.html_safe %>
       </div>
 
-      <% if user_signed_in? %>
-        <div class="row">
-          <div class="col-sm-6 review-like">
-            <%= render "likes/like" %>
-          </div>
+      <div class="row">
+        <div class="col-sm-6 review-like">
+          <%= render "likes/like", object: @review %>
+        </div>
+        <% if user_signed_in? %>
           <div class="col-sm-6">
             <p class="text-right"><strong><%= t ".your_rating" %></strong>
               <% if @supports.user_rated? current_user %>
@@ -47,8 +47,8 @@
               <% end %>
             </p>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
     <div class="review-comments">
       <p class="title">
