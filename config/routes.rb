@@ -15,10 +15,10 @@ Rails.application.routes.draw do
   resources :tours, only: :show do
     resources :reviews, only: [:new, :create, :show]do
       resources :comments, only: :create
-      resources :likes, only: [:new, :create, :destroy]
     end
     resources :bookings, only: [:new, :create] do
     end
   end
   resources :payments, only: [:new, :create]
+  resources :likes, only: [:create, :destroy]
 end

@@ -315,7 +315,6 @@ body.customer{
         margin: 0;
         color: #000191;
       }
-
       .comment{
         background-color: #fff;
       }
@@ -327,6 +326,7 @@ body.customer{
       resize: vertical;
     }
   }
+
   /* show tour detail */
   .tour_title {
     margin-bottom: 10px;
@@ -392,6 +392,14 @@ body.customer{
 
   .ave_star {
     color: #f4b400;
+  }
+
+  .like, .unlike {
+    color: #4F83E4;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 

@@ -10,6 +10,9 @@
         </span>
       </span>
       <%= comment.content %>
+      <p>
+        <%= render "likes/like", object: comment %>
+      </p>
     </div>
   </div>
 </div>
