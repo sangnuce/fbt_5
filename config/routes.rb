@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
     resources :bookings, only: [:index, :show, :update]
-    resources :places, except: [:show, :destroy]
+    resources :places, except: [:show]
   end
 
   resource :user, only: :show

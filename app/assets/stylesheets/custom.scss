@@ -488,6 +488,40 @@ body.admin {
   .booking-title {
     margin-top: 10px;
   }
+
+  .table-places{
+    td {
+      vertical-align: baseline;
+    }
+
+    img {
+     width: 150px;
+    }
+
+    .picture_place{
+      width: 15%;
+    }
+
+    .button {
+      width: 5%;
+    }
+  }
+
+  .label {
+    font-size: 12px;
+  }
+
+  .label-region {
+    background-color: #dd5b99;
+  }
+
+  .label-city {
+    background-color: #f39c12;
+  }
+
+  .label-place {
+    background-color: #00a65a;
+  }
 }
 
 #error_explanation {

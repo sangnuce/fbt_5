@@ -3,7 +3,9 @@ class Admin::PlacesController < Admin::ApplicationController
 
   def index
     @supports = Supports::PlaceSupport.new place_type: params[:place_type]
+    @places = Place.search(search_params).result.hash_tree
     respond_to do |format|
+      format.html {render :index}
       format.json {render json: @supports.parent_places}
     end
   end
@@ -40,8 +42,21 @@ class Admin::PlacesController < Admin::ApplicationController
     end
   end
 
+  def destroy
+    if @place.destroy
+      flash[:success] = t "flash.places.delete_place_success"
+      redirect_to admin_places_path
+    else
+      flash[:danger] = t "flash.places.place_cant_delete"
+    end
+  end
+
   private
   def place_params
     params.require(:place).permit :name, :picture, :place_type, :parent_id
+  end
+
+  def search_params
+    params.permit :name_cont, :place_type_eq
   end
 end
