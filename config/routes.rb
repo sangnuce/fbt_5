@@ -14,13 +14,12 @@ Rails.application.routes.draw do
   end
 
   resource :user, only: :show
-  resources :tours, only: :show do
+  resources :tours, only: [:index, :show] do
     resources :reviews, only: [:new, :create, :show] do
       resources :comments, only: :create
 
       get "comments/new/(:parent_id)", to: "comments#new", as: :new_comment
       get "comments/(:parent_id)", to: "comments#show", as: :show_sub_comment
-
     end
     resources :bookings, only: [:new, :create] do
     end

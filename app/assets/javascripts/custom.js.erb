@@ -62,7 +62,7 @@ $(document).on('turbolinks:load', function(){
       $total_price = $num_tourist * $price
       $('.total_price').val($total_price);
     }else{
-      alert('<%= I18n.t "javascripts.number_tourist" %>');
+      alert(I18n.t('booking.number_tourist'));
       $('.num-tourist').val('');
     }
   });
@@ -82,8 +82,8 @@ $(document).on('turbolinks:load', function(){
     $amount = $('#total_price').val();
     $tourist = $('#number_tourist').val();
     handler.open({
-      name: '<%= I18n.t "javascripts.payment" %>',
-      description: $tourist + '<%= I18n.t "javascripts.tourist" %>',
+      name: I18n.t('booking.payment'),
+      description: $tourist + I18n.t('booking.tourist'),
       amount: $amount*100
     });
   });
@@ -106,5 +106,11 @@ $(document).on('turbolinks:load', function(){
         }
       });
     }
+  }
+
+  $('.datepicker').datetimepicker({
+    format: I18n.t('datepicker.format'),
+    timepicker:false
+
   });
 });

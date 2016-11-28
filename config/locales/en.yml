@@ -10,9 +10,9 @@ en:
     base_title: "Framgia Booking Tours"
     header:
       login: "Login"
-      about: "About us"
-      contact: "Contact"
       home: "Homepage"
+      tours: "Tours"
+      profile: "Profile"
       logout: "Logout"
     footer:
       description: "Framgia Booking Tour"
@@ -133,6 +133,26 @@ en:
     formats:
       default: "%d/%m/%Y %H:%M"
   tours:
+    filtered_tour:
+      duration: "Duration:"
+      num_people: "Max people:"
+      from: "from"
+      per_person: "per person"
+      detail: "Detail"
+      category: "Category:"
+    filter_form:
+      tour_place_directory: "Tour or directory or place name"
+      start_date: "Start date"
+      num_people: "Number of people"
+      search: "Search"
+      from: "From"
+      to: "To"
+      price: "Price"
+      duration: "Duration"
+      order: "Order by"
+      rating: "Rating"
+      days: "day(s)"
+      per_person: "per person"
     tour:
       start_date: "Start date: "
       price_per_person: "Price per person: "
@@ -159,9 +179,15 @@ en:
       average_rating: "%{rate} / 5"
       please_sign_in: "Please sign-in to booking tour "
       click_here: "click here"
+    index:
+      title: "Tours"
+      nothing_to_show: "Nothing to show"
   status:
     available: "available"
     unavailable: "unavailable"
+  order_rules:
+    asc: "Ascending"
+    desc: "Descending"
   flash:
     access_denied: "Access denied."
     not_found: "Not found"
@@ -193,7 +219,7 @@ en:
       unlike_fail: "Unlike fail"
     bookings:
       create_booking_fail: "Booking failed"
-      create_booking_success: "Booking success"
+      booking_success: "Booking success"
       booking_updated: "Booking request updated"
       booking_update_fail: "Booking updated fail"
       booking_not_found: "Canot find booking request"
@@ -289,9 +315,11 @@ en:
       number_tourist: "Number tourist: "
       total: "Total:"
       submit_payment: "Submit Payment"
-  javascripts:
+  booking:
     number_tourist: "Number-tourist must be number"
     payment: "Payment"
     tourist: "tourist"
   picture:
     error_picture_size: "Should be less than 5MB"
+  datepicker:
+    format: "Y/m/d"
