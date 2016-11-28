@@ -12,7 +12,7 @@
           </span>
         </span>
         <%= child_comment.content %>
-        <p><%= link_to t("comments.comment.like") , "#" %></p>
+        <p><%= render "likes/like", object: child_comment %></p>
       </div>
     </div>
   </div>

@@ -4,9 +4,7 @@ class Supports::ReviewSupport
     @like = params[:like]
     @page = params[:page]
     @user = params[:user]
-
-    @like = @review.likes.find_by(user: @user) || @review.likes.build
-    @parent_comment = @review.comments.find_by id: params[:parent_id]
+    @parent_comment = @review.comments.find_by id: params[:parent_id] if @review
   end
 
   def user_rated? user
