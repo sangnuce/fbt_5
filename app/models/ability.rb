@@ -8,6 +8,7 @@ class Ability
       can [:read, :create], Comment
       can [:read], Review
       can [:read, :update], Booking
+      can :manage, Place
     else
       can :read, User do |u|
         u == user

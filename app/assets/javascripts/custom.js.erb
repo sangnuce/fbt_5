@@ -1,3 +1,7 @@
+function createOption(value, display){
+  return '<option value="' + value + '">' + display + '</option>';
+}
+
 $(function(){
   $(document).on('click', '.like', function(e){
     $(this).attr('disabled', 'disabled');
@@ -23,6 +27,26 @@ $(function(){
         $(this).removeAttr('disabled');
       }
     });
+  });
+
+  $('#place_type_filter').on('change', function(){
+    var first_option = $('#parent_id_filter option').first();
+    var option = createOption(first_option.attr('value'), first_option.text());
+    $('#parent_id_filter').html(option);
+    var value = $(this).val();
+    if(value != 'region') {
+      $.ajax({
+        url: '<%= Rails.application.class.routes.url_helpers.admin_places_path :json %>',
+        data: {place_type: value},
+        success: function(data){
+          var options = ""
+          $.each(data, function(index, place){
+            options += createOption(place.id, place.name);
+          });
+          $('#parent_id_filter').append(options);
+        }
+      });
+    }
   });
 });
 
@@ -63,5 +87,4 @@ $(document).on('turbolinks:load', function(){
       amount: $amount*100
     });
   });
-
 });
