@@ -14,5 +14,6 @@
  *= require skin-blue
  *= require jquery.datetimepicker
  *= require_tree .
+ *= require bootstrap-datepicker
  *= require_self
  */

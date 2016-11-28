@@ -82,6 +82,14 @@ en:
         view: "Detail"
       show:
         title: "Booking Detail"
+        update_status: "Update status"
+        return: "Return"
+      filter_form:
+        filter: "Filter"
+        all_status: "All status"
+        start_date: "Start date"
+        end_date: "End date"
+      show_bookings:
         contact_name: "Contact name:"
         contact_phone: "Contact phone:"
         contact_address: "Contact address:"
@@ -91,8 +99,6 @@ en:
         start_date: "Start date:"
         status: "Status:"
         created_at: "Created at:"
-        update_status: "Update status"
-        return: "Return"
     places:
       types:
         type: "Type"

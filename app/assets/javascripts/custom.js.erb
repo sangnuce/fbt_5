@@ -106,11 +106,15 @@ $(document).on('turbolinks:load', function(){
         }
       });
     }
-  }
+  });
 
   $('.datepicker').datetimepicker({
     format: I18n.t('datepicker.format'),
     timepicker:false
 
+  });
+
+  $('.input-daterange').datepicker({
+    format: "yyyy-mm-dd"
   });
 });

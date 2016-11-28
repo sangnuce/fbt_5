@@ -4,8 +4,13 @@ class Admin::BookingsController < Admin::ApplicationController
   load_and_authorize_resource
 
   def index
-    @bookings = Booking.order_desc.paginate page: params[:page],
-      per_page: Settings.bookings.per_page_bookings
+    @q = Booking.ransack params
+    @supports = Supports::BookingSupport.new booking: @q,
+      page: params[:page]
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show
