@@ -38,6 +38,7 @@ en:
         booking_requests: "Booking requests"
         user_reviews: "User reviews"
         revenue: "Revenue"
+        places: "Places"
   shared:
     error_messages:
       form_error: "The form contains"
@@ -92,6 +93,21 @@ en:
         created_at: "Created at:"
         update_status: "Update status"
         return: "Return"
+    places:
+      types:
+        type: "Type"
+        region: "Region"
+        city: "City"
+        place: "Place"
+      new:
+        title: "Add place"
+      edit:
+        title: "Edit place"
+      form:
+        parent: "Parent"
+        name: "Name"
+        picture: "Picture"
+        select_parent_place: "--- Select parent place ---"
   number:
     currency:
       format:
@@ -174,6 +190,9 @@ en:
       booking_not_found: "Canot find booking request"
       booking_rejected: "Booking request rejected"
       booking_approved: "Booking request approved"
+    places:
+      add_place_success: "Add place success."
+      edit_place_success: "Edit place success."
   users:
     show:
       title: "User profile"
@@ -262,4 +281,6 @@ en:
   javascripts:
     number_tourist: "Number-tourist must be number"
     payment: "Payment"
-    tourist: " tourist"
+    tourist: "tourist"
+  picture:
+    error_picture_size: "Should be less than 5MB"
