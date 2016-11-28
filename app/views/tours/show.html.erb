@@ -74,13 +74,17 @@
     </div>
     <div id="booking" class="tab-pane fade">
       <div class="row text-center">
+      <% if user_signed_in? %>
         <% if @tour.available? %>
-          <%= link_to t(".book_now"), new_tour_booking_path(@tour),
-            class: "btn btn-danger " %>
+          <%= render "bookings/form_booking" %>
         <% else %>
           <h3 class="status_unavailable">
             <%= t "status.unavailable" %></h3>
         <% end %>
+      <% else %>
+        <%= t".please_sign_in" %><%= link_to t(".click_here"),
+          new_user_session_path %>
+      <% end %>
       </div>
     </div>
   </div>

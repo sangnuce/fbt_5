@@ -12,4 +12,8 @@ class Supports::TourSupport
     @reviews = @tour.reviews.order_time_desc.paginate page: @page,
       per_page: Settings.reviews.per_pages_review
   end
+
+  def tour_dates
+    @dates ||= @tour.tour_dates.collect{|date| [date.start_date, date.id]}
+  end
 end

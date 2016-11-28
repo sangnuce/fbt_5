@@ -4,21 +4,17 @@ class BookingsController < ApplicationController
   load_resource :tour
   load_and_authorize_resource :booking, through: :tour
 
-  before_action :load_tour_dates, only: :new
-
-  def new
-  end
-
   def create
     @booking.user = current_user
     @booking.status = Booking.statuses[:waiting_pay]
     if @booking.save
       @payment = Payment.new
+      flash[:success] = t "flash.bookings.booking_success"
       render "payments/new"
     else
-      load_tour_dates
+      @supports = Supports::TourSupport.new tour: @tour
       flash[:danger] = t "flash.bookings.create_booking_fail"
-      render :new
+      render "tours/show"
     end
   end
 
@@ -32,9 +28,5 @@ class BookingsController < ApplicationController
     params.require(:booking).permit :user_id, :tour_date_id,
       :num_tourist, :contact_name, :contact_phone, :contact_address,
       :description, :total_price, :status
-  end
-
-  def load_tour_dates
-    @dates ||= @tour.tour_dates.collect{|date| [date.start_date, date.id]}
   end
 end
