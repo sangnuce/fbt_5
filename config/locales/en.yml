@@ -132,6 +132,7 @@ en:
     comments:
       comment_success: "Comment added."
       cant_add_comment: "Can't add comment."
+      comment_not_found: "Comment not found."
     likes:
       like_not_found: "Like not found"
       like_success: "Like success"
@@ -172,6 +173,9 @@ en:
   comments:
     comment:
       ago: "ago"
+      like: "Like"
+      reply_up: "Reply"
+      reply_down: "reply"
     form:
       please: "Please"
       login: "login"
