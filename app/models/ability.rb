@@ -19,6 +19,9 @@ class Ability
       can [:read, :create], Review
       can :manage, Like
       can [:new, :create], Booking
+      can [:read, :update], Booking do |booking|
+        booking.user == user
+      end
     end
   end
 end

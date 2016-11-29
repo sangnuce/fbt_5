@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20161123174023) do
     t.text     "description",     limit: 65535
     t.float    "total_price",     limit: 24
     t.integer  "status",                        default: 0
+    t.boolean  "is_cancel",                     default: false
     t.integer  "tour_date_id"
     t.integer  "user_id"
     t.datetime "deleted_at"

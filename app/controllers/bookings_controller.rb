@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :authenticate_user!
 
   load_resource :tour
-  load_and_authorize_resource :booking, through: :tour
+  load_and_authorize_resource :booking, through: :tour, shallow: :true
 
   def create
     @booking.user = current_user
@@ -18,6 +18,25 @@ class BookingsController < ApplicationController
     end
   end
 
+  def index
+    @bookings = current_user.bookings
+      .order_desc.paginate page: params[:page],
+      per_page: Settings.bookings.per_page_bookings
+  end
+
+  def show
+    @payment = Payment.new
+  end
+
+  def update
+    if @booking.update_attributes booking_params
+      flash[:success] = t "flash.bookings.booking_canceled"
+    else
+      flash[:danger] = t "flash.bookings.booking_cancel_fail"
+    end
+    redirect_to bookings_path
+  end
+
   rescue_from ActiveRecord::RecordNotFound do
     flash[:danger] = t "flash.tours.tour_not_found"
     redirect_to root_path
@@ -27,6 +46,6 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit :user_id, :tour_date_id,
       :num_tourist, :contact_name, :contact_phone, :contact_address,
-      :description, :total_price, :status
+      :description, :total_price, :status, :is_cancel
   end
 end
