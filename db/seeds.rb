@@ -28,7 +28,7 @@ User.create! name: "Admin", email: "admin@gmail.com", password: "123456",
 end
 
 3.times do
-  Place.create! name: Faker::Name.name
+  Place.create! name: Faker::Name.name, place_type: :region
 end
 
 3.times do

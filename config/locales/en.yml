@@ -108,6 +108,15 @@ en:
         name: "Name"
         picture: "Picture"
         select_parent_place: "--- Select parent place ---"
+      index:
+        title: "Place management"
+        name: "Name"
+        type: "Type"
+        edit: "Edit"
+        delete: "Delete"
+        search: "Search"
+        select: "Select"
+        place_type: "Place type"
   number:
     currency:
       format:
@@ -193,6 +202,8 @@ en:
     places:
       add_place_success: "Add place success."
       edit_place_success: "Edit place success."
+      delete_place_success: "Delete place success."
+      place_cant_delete: "Can't delete place."
   users:
     show:
       title: "User profile"
