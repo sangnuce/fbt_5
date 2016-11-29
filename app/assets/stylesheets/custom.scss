@@ -407,8 +407,40 @@ body.customer {
   .body-booking {
     text-align: left;
   }
+
   .label {
     font-size: 83%;
+  }
+
+  .filter-tour {
+    padding-top: 50px;
+    .tours {
+      border: none;
+      border-left: 1px solid #CCC;
+      .tour {
+        padding: 10px 0 0 0;
+        border-bottom: 1px dashed #CCC;
+        &:hover {
+          box-shadow: 0 0 5px #08C;
+          border-radius: 5px;
+        }
+        .picture {
+          margin-bottom: 10px;
+          img {
+            max-width: 100%;
+          }
+        }
+        .tour-name {
+          font-size: 18px;
+          font-weight: bold;
+        }
+        .price {
+          font-size: 20px;
+          color: #F00;
+          font-weight: bold;
+        }
+      }
+    }
   }
 }
 

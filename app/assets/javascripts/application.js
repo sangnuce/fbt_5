@@ -10,6 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
@@ -18,4 +21,5 @@
 //= require jquery.raty
 //= require ratyrate
 //= require ckeditor/init
+//= require jquery.datetimepicker
 //= require_tree .
