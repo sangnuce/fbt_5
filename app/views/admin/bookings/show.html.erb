@@ -47,7 +47,7 @@
     </div>
     <% unless @booking.waiting_pay? || @booking.reject? %>
       <%= form_for [:admin, @booking] do |f| %>
-        <div class="row booking-form-update">
+        <div class="row pull-bottom">
           <div class="col-md-5">
             <%= f.select :status, options_for_select(@statuses),
               {}, class: "form-control" %>
