@@ -633,10 +633,26 @@ body.admin {
   background: #dd4b39;
 }
 
+.status_cancel {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 85%;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  vertical-align: baseline;
+  border-radius: .25em;
+  background: #f39c12;
+}
+
 .push_down {
   margin-top: 10px;
 }
 
 .margin-bottom-0 {
   margin-bottom: 0;
+}
+
+.cancelling {
+  float: left;
 }

@@ -23,6 +23,7 @@
     <div class="col-md-6">
       <p><strong><%= t ".num_people" %></strong>
         <%= @tour.num_people %>
+        <%= hidden_field_tag :max_people, @tour.num_people %>
       </p>
     </div>
   </div>
@@ -39,6 +40,13 @@
         <span class="status_<%= @tour.status %>">
           <%= t "status.#{@tour.status}" %>
         </span>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <p><strong><%= t ".discount" %>:</strong>
+        <%= @tour.discount %>%
       </p>
     </div>
   </div>
