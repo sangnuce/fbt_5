@@ -37,11 +37,34 @@ $(function(){
       child.removeClass('fa-minus').addClass('fa-plus');
     }
   });
+
+  $(document).on('click', '.remove_fields', function(e){
+    e.preventDefault();
+    var field = $(this).parent();
+    field.find('.destroy').attr('value', '1');
+    field.hide();
+  });
+
+  $(document).on('click', '.add_field', function(e){
+    e.preventDefault();
+    var new_id = new Date().getTime();
+    var association = $(this).data('association');
+    var regexp = new RegExp('new_' + association,'g');
+    $('.' + association).append($(this).data('field').replace(regexp, new_id));
+    $('.' + association).children('.field').last().find('.datepicker').datepicker({
+      format: I18n.t('datepicker.format')
+    });
+    $('.' + association).children('.field').last().find('.select2').select2();
+  });
 });
 
 $(document).on('turbolinks:load', function(){
   $('.ckeditor').each(function(){
-    CKEDITOR.replace($(this).attr('id'));
+    var name = $(this).attr('id');
+    if(CKEDITOR.instances[name]){
+      CKEDITOR.instances[name].destroy();
+    }
+    CKEDITOR.replace(name);
   });
 
   $('.num-tourist').change(function(){
@@ -112,4 +135,6 @@ $(document).on('turbolinks:load', function(){
       $form.trigger('submit');
     });
   });
+
+  $('.select2').select2();
 });

@@ -543,6 +543,12 @@ body.admin {
   }
 
   .tour-detail {
+    .picture {
+      img {
+        max-width: 100%;
+        padding: 10px 0;
+      }
+    }
     .status-available, .status-unavailable {
       color: white;
       padding: 3px 5px;
@@ -563,6 +569,21 @@ body.admin {
       padding: 3px 5px;
       font-weight: bold;
     }
+
+    .breadcrumb > span + span:before {
+      content: "\00BB";
+      color: #333;
+      padding: 0 10px;
+    }
+
+    .tour-place {
+      color: #268433;
+      font-weight: bold;
+    }
+  }
+
+  .field {
+    margin-bottom: 10px;
   }
 }
 

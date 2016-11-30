@@ -44,6 +44,7 @@ en:
     error_messages:
       form_error: "The form contains"
       shared_error: "error"
+      cant_be_empty: "can't be empty"
   admin:
     users:
       index:
@@ -146,6 +147,7 @@ en:
         unavailable: "Unavailable"
       show:
         name: "Name: "
+        category: "Category: "
         price: "Price: "
         num_people: "Max people: "
         duration: "Duration: "
@@ -155,12 +157,37 @@ en:
         edit: "Edit"
         delete: "Delete"
         day: "day"
-        start_date: "Start date: "
+        start_dates: "Start dates: "
+        tour_places: "Tour places: "
       discount_modal:
         update_discount: "Update discount"
         discount: "Discount"
         update: "Update"
         close: "Close"
+      new:
+        title: "Add tour"
+      form:
+        name: "Name"
+        category: "Category"
+        price: "Price per person"
+        num_people: "Max people"
+        duration: "Duration"
+        discount: "Discount"
+        status: "Status"
+        description: "Description"
+        picture: "Picture"
+        start_dates: "Start dates"
+        tour_places: "Tour places"
+        add_tour_date: "Add tour date"
+        add_tour_place: "Add tour place"
+      tour_place_field:
+        select_place: "Select place"
+        remove: "Remove"
+      tour_date_field:
+        select_date: "Select date"
+        remove: "Remove"
+      edit:
+        title: "Edit tour"
     categories:
       index:
         title: "Category management"
@@ -273,10 +300,12 @@ en:
       change_password_success: "Change password success."
     tours:
       tour_not_found: "Tour not found"
+      add_tour_success: "Add tour success"
+      add_tour_fail: "Add tour fail"
       delete_tour_success: "Delete tour success"
       delete_tour_fail: "Delete tour fail"
-      update_discount_success: "Update discount success"
-      update_discount_fail: "Update discount fail"
+      update_success: "Update success"
+      update_fail: "Update fail"
     reviews:
       review_not_found: "Review not found"
       create_review_success: "Create review success"

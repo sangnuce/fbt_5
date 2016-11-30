@@ -16,4 +16,12 @@ class Supports::TourSupport
   def tour_dates
     @dates ||= @tour.tour_dates.collect{|date| [date.start_date, date.id]}
   end
+
+  def places
+    @places ||= Place.place.map {|place| [place.name, place.id]}
+  end
+
+  def categories
+    @categories ||= Category.all.map {|category| [category.name, category.id]}
+  end
 end
