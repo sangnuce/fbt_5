@@ -119,11 +119,12 @@ en:
         title: "Place management"
         name: "Name"
         type: "Type"
-        edit: "Edit"
-        delete: "Delete"
         search: "Search"
         select: "Select"
         place_type: "Place type"
+      place:
+        edit: "Edit"
+        delete: "Delete"
     tours:
       index:
         title: "Tours management"
@@ -154,6 +155,16 @@ en:
         edit: "Edit"
         delete: "Delete"
         day: "day"
+    categories:
+      index:
+        title: "Category management"
+        name: "Name"
+        search: "Search"
+      category:
+        edit: "Edit"
+        delete: "Delete"
+      new:
+        title: "Add new"
   number:
     currency:
       format:

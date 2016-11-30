@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  has_closure_tree
+  acts_as_tree order: "created_at DESC"
 
   has_many :tours
 end

@@ -5,8 +5,10 @@ class CreatePlaces < ActiveRecord::Migration[5.0]
       t.string :picture
       t.integer :place_type
       t.integer :parent_id
+      t.datetime :deleted_at
 
       t.timestamps
     end
+    add_index :places, :deleted_at
   end
 end

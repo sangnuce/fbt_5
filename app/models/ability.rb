@@ -10,6 +10,7 @@ class Ability
       can [:read, :update], Booking
       can :manage, Place
       can :manage, Tour
+      can :manage, Category
     else
       can :read, User do |u|
         u == user

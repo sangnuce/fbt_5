@@ -1,6 +1,8 @@
 class Place < ApplicationRecord
   enum place_type: {region: 0, city: 1, place: 2}
 
+  acts_as_paranoid
+
   acts_as_tree order: "created_at DESC"
 
   has_many :tour_places, dependent: :destroy
