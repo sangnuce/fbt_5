@@ -252,6 +252,8 @@ en:
       change_password_success: "Change password success."
     tours:
       tour_not_found: "Tour not found"
+      delete_tour_success: "Delete tour success"
+      delete_tour_fail: "Delete tour fail"
     reviews:
       review_not_found: "Review not found"
       create_review_success: "Create review success"
