@@ -266,6 +266,10 @@ en:
     reviews:
       review_not_found: "Review not found"
       create_review_success: "Create review success"
+      review_updated: "Review updated"
+      review_update_fail: "Review update fail"
+      review_deleted: "Review deleted"
+      review_delete_fail: "Review delete fail"
     comments:
       comment_success: "Comment added."
       cant_add_comment: "Can't add comment."
@@ -314,6 +318,18 @@ en:
       your_rating: "Your rating: "
     new:
       title: "Create review"
+    index:
+      review_type: "Review type"
+      title: "Title"
+      rating: "Rating"
+      tour_name: "Tour name"
+      created-at: "Created at"
+      title: "Manage tour"
+    edit:
+      title: "Edit review"
+    review:
+      average_rating: "%{rate} / %{max_rate}"
+      view: "View detail"
   likes:
     like:
       like: "Like"

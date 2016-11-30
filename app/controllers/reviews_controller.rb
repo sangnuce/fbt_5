@@ -1,9 +1,9 @@
 class ReviewsController < ApplicationController
   load_resource :tour
-  load_and_authorize_resource :review, through: :tour, param_method: :review_params
+  load_and_authorize_resource :review, through: :tour, shallow: :true
 
-  before_action :authenticate_user!, only: [:new, :create]
-  before_action :load_review_types, only: [:new, :create]
+  before_action :authenticate_user!
+  before_action :load_review_types, only: [:new, :create, :edit]
 
   def create
     @review.user = current_user
@@ -18,6 +18,35 @@ class ReviewsController < ApplicationController
   def show
     @supports = Supports::ReviewSupport.new review: @review,
       page: params[:page], user: current_user
+  end
+
+  def index
+    @reviews = current_user.reviews
+      .order_time_desc.paginate page: params[:page],
+      per_page: Settings.reviews.per_page_reviews
+  end
+
+  def edit
+  end
+
+  def update
+    if @review.update_attributes review_params
+      @supports = Supports::ReviewSupport.new review: @review,
+        page: params[:page], user: current_user
+      flash[:success] = t "flash.reviews.review_updated"
+    else
+      flash[:danger] = t "flash.reviews.booking_update_fail"
+    end
+    render :show
+  end
+
+  def destroy
+    if @review.destroy
+      flash[:success] = t "flash.review.review_deleted"
+    else
+      flash[:danger] = t "flash.reviews.review_delete_fail"
+    end
+    redirect_to root_path
   end
 
   rescue_from ActiveRecord::RecordNotFound do

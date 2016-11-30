@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   resource :user, only: :show
   resources :tours, only: [:index, :show] do
-    resources :reviews, only: [:new, :create, :show] do
+    resources :reviews, except: :index do
       resources :comments, only: :create
 
       get "comments/new/(:parent_id)", to: "comments#new", as: :new_comment
@@ -29,4 +29,5 @@ Rails.application.routes.draw do
   resources :payments, only: [:new, :create]
   resources :likes, only: [:create, :destroy]
   resources :bookings, only: [:index, :show, :update]
+  resources :reviews, only: :index
 end
