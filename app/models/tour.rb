@@ -1,13 +1,15 @@
 class Tour < ApplicationRecord
   enum status: {available: true, unavailable: false}
 
+  acts_as_paranoid
+
   ratyrate_rateable :quality
 
   belongs_to :category
 
-  has_many :reviews
-  has_many :tour_dates
-  has_many :tour_places
+  has_many :reviews, dependent: :destroy
+  has_many :tour_dates, dependent: :destroy
+  has_many :tour_places, dependent: :destroy
   has_many :bookings, through: :tour_dates
   has_many :places, through: :tour_places
 

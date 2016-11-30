@@ -1,4 +1,6 @@
 class Payment < ApplicationRecord
+  acts_as_paranoid
+
   belongs_to :booking
   belongs_to :bank_card
 

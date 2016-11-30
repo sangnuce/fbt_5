@@ -6,6 +6,7 @@ class CreateBankCards < ActiveRecord::Migration[5.0]
       t.string :card_num
       t.belongs_to :bank, foreign_key: true
       t.belongs_to :user, foreign_key: true
+      t.datetime :deleted_at
 
       t.timestamps
     end

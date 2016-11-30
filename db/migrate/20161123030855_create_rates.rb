@@ -6,6 +6,7 @@ class CreateRates < ActiveRecord::Migration
       t.belongs_to :rateable, polymorphic: true
       t.float :stars, default: 0.0
       t.string :dimension
+      t.datetime :deleted_at
       t.timestamps
     end
 

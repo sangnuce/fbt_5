@@ -3,6 +3,7 @@ class CreateLikes < ActiveRecord::Migration[5.0]
     create_table :likes do |t|
       t.belongs_to :user, foreign_key: true
       t.belongs_to :likeable, polymorphic: true
+      t.datetime :deleted_at
 
       t.timestamps
     end

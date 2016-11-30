@@ -11,6 +11,7 @@ class CreateTours < ActiveRecord::Migration[5.0]
       t.string :picture
       t.float :rating, default: 0
       t.belongs_to :category, foreign_key: true
+      t.datetime :deleted_at
 
       t.timestamps
     end

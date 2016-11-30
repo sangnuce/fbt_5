@@ -6,6 +6,7 @@ class CreateRatingCaches < ActiveRecord::Migration
       t.float :avg, default: 0.0
       t.integer :qty, default: 0
       t.string :dimension
+      t.datetime :deleted_at
       t.timestamps
     end
 
