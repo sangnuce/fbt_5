@@ -552,6 +552,13 @@ body.admin {
     .status-unavailable {
       background: #DE233E;
     }
+
+    .tour-date {
+      margin: 0 5px;
+      background: #FF0;
+      padding: 3px 5px;
+      font-weight: bold;
+    }
   }
 }
 
@@ -624,4 +631,8 @@ body.admin {
 
 .push_down {
   margin-top: 10px;
+}
+
+.margin-bottom-0 {
+  margin-bottom: 0;
 }
