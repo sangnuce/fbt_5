@@ -28,4 +28,5 @@ Rails.application.routes.draw do
   end
   resources :payments, only: [:new, :create]
   resources :likes, only: [:create, :destroy]
+  resources :bookings, only: [:index, :show, :update]
 end

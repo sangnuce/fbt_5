@@ -476,54 +476,6 @@ body.admin {
     color: #fff;
   }
 
-  .status_waiting_pay {
-    display: inline;
-    padding: .2em .6em .3em;
-    font-size: 85%;
-    font-weight: bold;
-    line-height: 1;
-    color: #fff;
-    vertical-align: baseline;
-    border-radius: .25em;
-    background: #5bc0de;
-  }
-
-  .status_paid {
-    display: inline;
-    padding: .2em .6em .3em;
-    font-size: 85%;
-    font-weight: bold;
-    line-height: 1;
-    color: #fff;
-    vertical-align: baseline;
-    border-radius: .25em;
-    background: #337ab7;
-  }
-
-  .status_approve {
-    display: inline;
-    padding: .2em .6em .3em;
-    font-size: 85%;
-    font-weight: bold;
-    line-height: 1;
-    color: #fff;
-    vertical-align: baseline;
-    border-radius: .25em;
-    background: #5cb85c;
-  }
-
-  .status_reject {
-    display: inline;
-    padding: .2em .6em .3em;
-    font-size: 85%;
-    font-weight: bold;
-    line-height: 1;
-    color: #fff;
-    vertical-align: baseline;
-    border-radius: .25em;
-    background: #dd4b39;
-  }
-
   .pull-bottom {
     margin-bottom: 20px;
   }
@@ -620,4 +572,56 @@ body.admin {
 
 .alert {
   margin-bottom: 0px;
+}
+
+.status_waiting_pay {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 85%;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  vertical-align: baseline;
+  border-radius: .25em;
+  background: #5bc0de;
+}
+
+.status_paid {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 85%;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  vertical-align: baseline;
+  border-radius: .25em;
+  background: #337ab7;
+}
+
+.status_approve {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 85%;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  vertical-align: baseline;
+  border-radius: .25em;
+  background: #5cb85c;
+}
+
+.status_reject {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 85%;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  vertical-align: baseline;
+  border-radius: .25em;
+  background: #dd4b39;
+}
+
+.push_down {
+  margin-top: 10px;
 }

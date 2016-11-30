@@ -273,19 +273,20 @@ en:
       booking_not_found: "Canot find booking request"
       booking_rejected: "Booking request rejected"
       booking_approved: "Booking request approved"
+      booking_canceled: "Booking request canceled"
+      booking_cancel_fail: "Booking request cancel fail"
     places:
       add_place_success: "Add place success."
       edit_place_success: "Edit place success."
       delete_place_success: "Delete place success."
       place_cant_delete: "Can't delete place."
-  users:
-    show:
-      title: "User profile"
   data:
     confirm: "Are you sure?"
   users:
     show:
       title: "User profile"
+      booking_request: "Booking Request"
+      update: "Update"
   reviews:
     show:
       title: "Review details"
@@ -334,6 +335,33 @@ en:
       submit: "Booking now"
       description_price: "Total price: (number tourist) x"
       price: "(price)"
+    index:
+      title: "Booking request"
+      tour: "Tour"
+      start_date: "Start date"
+      duration: "Duration"
+      num_tourist: "Number tourist"
+      total_price: "Total price"
+      status: "Status"
+      created_at: "Created at"
+    booking:
+      day: "day"
+      view: View detail
+    show:
+      title: "Booking request"
+      contact_name: "Contact name:"
+      contact_phone: "Contact phone:"
+      contact_address: "Contact address:"
+      num_tourist: "Number tourist:"
+      total_price: "Total price:"
+      tour_booking: "Tour booking:"
+      start_date: "Start date:"
+      status: "Status:"
+      created_at: "Created at:"
+      payment_continue: "Payment continue"
+      cancel_tour: "Cancel tour"
+      close: "Close"
+      content_confirm: "Are your sure to cancel this tour?"
   payments:
     new:
       framgia: " Framgia"
