@@ -585,6 +585,22 @@ body.admin {
       background: #DE233E;
     }
   }
+
+  .tour-detail {
+    .status-available, .status-unavailable {
+      color: white;
+      padding: 3px 5px;
+      border-radius: 10px;
+    }
+
+    .status-available {
+      background: #39BF5B;
+    }
+
+    .status-unavailable {
+      background: #DE233E;
+    }
+  }
 }
 
 #error_explanation {
