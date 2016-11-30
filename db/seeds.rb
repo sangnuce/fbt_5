@@ -27,7 +27,7 @@ User.create! name: "Admin", email: "admin@gmail.com", password: "123456",
     password_confirmation: password, phone: phone, is_admin: false
 end
 
-3.times do
+5.times do
   Place.create! name: Faker::Name.name, place_type: :region
 end
 
@@ -35,11 +35,16 @@ end
   category = Category.create! name: Faker::Name.name
   10.times do
     tour = category.tours.create! name: Faker::Hipster.sentence(1),
-      price_per_person: 100, description: Faker::Hipster.paragraph(20),
-      num_people: 3, duration: 3
-    tour.tour_places.create! place_id: Faker::Number.between(1, 3)
+      price_per_person: Faker::Number.between(10, 100),
+      description: Faker::Hipster.paragraph(20),
+      num_people: Faker::Number.between(1, 20),
+      duration: Faker::Number.between(1, 10),
+      discount: Faker::Number.between(0, 30)
+    tour.tour_places.create! place_id: Faker::Number.between(1, 5)
+
     3.times do
-      tour.tour_dates.create! start_date: Time.zone.today
+      tour.tour_dates.create! start_date: Faker::Date
+        .between(Date.today, 1.year.from_now)
     end
   end
 end

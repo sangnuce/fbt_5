@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20161123174023) do
     t.string   "card_num"
     t.integer  "bank_id"
     t.integer  "user_id"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bank_id"], name: "index_bank_cards_on_bank_id", using: :btree
@@ -26,6 +27,7 @@ ActiveRecord::Schema.define(version: 20161123174023) do
 
   create_table "banks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,6 +42,7 @@ ActiveRecord::Schema.define(version: 20161123174023) do
     t.integer  "status",                        default: 0
     t.integer  "tour_date_id"
     t.integer  "user_id"
+    t.datetime "deleted_at"
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
     t.index ["tour_date_id"], name: "index_bookings_on_tour_date_id", using: :btree
@@ -49,6 +52,7 @@ ActiveRecord::Schema.define(version: 20161123174023) do
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.integer  "parent_id"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -90,6 +94,7 @@ ActiveRecord::Schema.define(version: 20161123174023) do
     t.integer  "parent_id"
     t.integer  "review_id"
     t.integer  "user_id"
+    t.datetime "deleted_at"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["review_id"], name: "index_comments_on_review_id", using: :btree
@@ -100,6 +105,7 @@ ActiveRecord::Schema.define(version: 20161123174023) do
     t.integer  "user_id"
     t.string   "likeable_type"
     t.integer  "likeable_id"
+    t.datetime "deleted_at"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["likeable_id", "likeable_type"], name: "index_likes_on_likeable_id_and_likeable_type", using: :btree
@@ -113,6 +119,7 @@ ActiveRecord::Schema.define(version: 20161123174023) do
     t.string   "card_token"
     t.string   "email"
     t.integer  "booking_id"
+    t.datetime "deleted_at"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.index ["booking_id"], name: "index_payments_on_booking_id", using: :btree
@@ -143,6 +150,7 @@ ActiveRecord::Schema.define(version: 20161123174023) do
     t.integer  "rateable_id"
     t.float    "stars",         limit: 24, default: 0.0
     t.string   "dimension"
+    t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["rateable_id", "rateable_type"], name: "index_rates_on_rateable_id_and_rateable_type", using: :btree
@@ -155,6 +163,7 @@ ActiveRecord::Schema.define(version: 20161123174023) do
     t.float    "avg",            limit: 24, default: 0.0
     t.integer  "qty",                       default: 0
     t.string   "dimension"
+    t.datetime "deleted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["cacheable_id", "cacheable_type"], name: "index_rating_caches_on_cacheable_id_and_cacheable_type", using: :btree
@@ -167,6 +176,7 @@ ActiveRecord::Schema.define(version: 20161123174023) do
     t.float    "rating",      limit: 24,    default: 0.0
     t.integer  "user_id"
     t.integer  "tour_id"
+    t.datetime "deleted_at"
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
     t.index ["tour_id"], name: "index_reviews_on_tour_id", using: :btree
@@ -176,6 +186,7 @@ ActiveRecord::Schema.define(version: 20161123174023) do
   create_table "tour_dates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.date     "start_date"
     t.integer  "tour_id"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tour_id"], name: "index_tour_dates_on_tour_id", using: :btree
@@ -184,6 +195,7 @@ ActiveRecord::Schema.define(version: 20161123174023) do
   create_table "tour_places", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "tour_id"
     t.integer  "place_id"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["place_id"], name: "index_tour_places_on_place_id", using: :btree
@@ -201,6 +213,7 @@ ActiveRecord::Schema.define(version: 20161123174023) do
     t.string   "picture"
     t.float    "rating",           limit: 24,    default: 0.0
     t.integer  "category_id"
+    t.datetime "deleted_at"
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
     t.index ["category_id"], name: "index_tours_on_category_id", using: :btree

@@ -7,6 +7,7 @@ class CreateReviews < ActiveRecord::Migration[5.0]
       t.float :rating, default: 0
       t.belongs_to :user, foreign_key: true
       t.belongs_to :tour, foreign_key: true
+      t.datetime :deleted_at
 
       t.timestamps
     end

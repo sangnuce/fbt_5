@@ -10,6 +10,7 @@ class CreateBookings < ActiveRecord::Migration[5.0]
       t.integer :status, default: 0
       t.belongs_to :tour_date, foreign_key: true
       t.belongs_to :user, foreign_key: true
+      t.datetime :deleted_at
 
       t.timestamps
     end

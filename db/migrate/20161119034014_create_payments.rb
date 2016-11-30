@@ -6,6 +6,7 @@ class CreatePayments < ActiveRecord::Migration[5.0]
       t.string :card_token
       t.string :email
       t.belongs_to :booking, foreign_key: true
+      t.datetime :deleted_at
 
       t.timestamps
     end
