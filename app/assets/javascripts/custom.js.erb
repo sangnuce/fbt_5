@@ -29,24 +29,13 @@ $(function(){
     });
   });
 
-  $(document).ready(function(){
-    $('#place-region').on('shown', function () {
-       $(this).parent().find(".fa-plus").removeClass("fa-plus").addClass("fa-minus");
-    });
-
-    $('#place-region').on('hidden', function () {
-       $(this).parent().find(".fa-minus").removeClass("fa-minus").addClass("fa-plus");
-    });
-  });
-
-  $(document).ready(function(){
-    $('#place-city').on('shown.bs.collapse', function () {
-       $(this).parent().find(".fa-plus").removeClass("fa-plus").addClass("fa-minus");
-    });
-
-    $('#place-city').on('hidden.bs.collapse', function () {
-       $(this).parent().find(".fa-minus").removeClass("fa-minus").addClass("fa-plus");
-    });
+  $('.btn-tree').on('click', function (e) {
+    var child = $(this).find('i').first();
+    if(child.hasClass('fa-plus')){
+      child.removeClass('fa-plus').addClass('fa-minus');
+    } else {
+      child.removeClass('fa-minus').addClass('fa-plus');
+    }
   });
 });
 

@@ -1,7 +1,7 @@
 <td>
-  <% unless place.place? %>
+  <% unless place.leaf? %>
     <button data-toggle="collapse" data-parent="#table_places"
-      data-target="#place-<%= place.place_type %>" class="btn btn-box-tool"
+      data-target=".place-<%= place.id %>" class="btn btn-box-tool btn-tree"
       type="button">
       <i class="fa fa-plus"></i>
     </button>
@@ -17,6 +17,6 @@
     class: "btn btn-info" %>
 </td>
 <td>
-  <%= link_to t("delete"), admin_place_path(place), class: "btn btn-danger",
+  <%= link_to t(".delete"), admin_place_path(place), class: "btn btn-danger",
     method: :delete, data: {confirm: t("data.confirm")} %>
 </td>

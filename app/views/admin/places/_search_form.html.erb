@@ -6,7 +6,7 @@
   <div class="form-group">
     <%= label_tag :place_type_eq, t("admin.places.index.place_type") %>
     <%= select_tag :place_type_eq, options_for_select(Place.place_types),
-      include_blank: t("admin.places.index.select") %>
+      include_blank: t("admin.places.index.select"), class: "form-control" %>
   </div>
   <%= submit_tag t("admin.places.index.search"), class: "btn btn-default" %>
 <% end %>
