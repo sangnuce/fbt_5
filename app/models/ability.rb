@@ -9,6 +9,7 @@ class Ability
       can [:read], Review
       can [:read, :update], Booking
       can :manage, Place
+      can :manage, Tour
     else
       can :read, User do |u|
         u == user

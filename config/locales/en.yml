@@ -124,6 +124,25 @@ en:
         search: "Search"
         select: "Select"
         place_type: "Place type"
+    tours:
+      index:
+        title: "Tours management"
+        add_tour: "Add tour"
+        name: "Name"
+        price: "Price"
+        num_people: "Max people"
+        duration: "Duration"
+        discount: "Discount"
+        status: "Status"
+      tour:
+        detail: "Detail"
+        day: "day"
+      search_form:
+        select_status: "Select status"
+        enter_keyword: "Enter keyword"
+      statuses:
+        available: "Available"
+        unavailable: "Unavailable"
   number:
     currency:
       format:
@@ -329,4 +348,4 @@ en:
   picture:
     error_picture_size: "Should be less than 5MB"
   datepicker:
-    format: "Y/m/d"
+    format: "yyyy-mm-dd"

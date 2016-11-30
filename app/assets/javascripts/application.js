@@ -21,6 +21,5 @@
 //= require jquery.raty
 //= require ratyrate
 //= require ckeditor/init
-//= require jquery.datetimepicker
 //= require bootstrap-datepicker
 //= require_tree .
