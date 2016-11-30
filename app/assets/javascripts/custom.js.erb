@@ -98,7 +98,7 @@ $(document).on('turbolinks:load', function(){
         url: '<%= Rails.application.class.routes.url_helpers.admin_places_path :json %>',
         data: {place_type: value},
         success: function(data){
-          var options = ""
+          var options = '';
           $.each(data, function(index, place){
             options += createOption(place.id, place.name);
           });
@@ -108,12 +108,11 @@ $(document).on('turbolinks:load', function(){
     }
   });
 
-  $('.datepicker').datetimepicker({
-    format: I18n.t('datepicker.format'),
-    timepicker:false
+  $('.datepicker').datepicker({
+    format: I18n.t('datepicker.format')
   });
 
   $('.input-daterange').datepicker({
-    format: "yyyy-mm-dd"
+    format: I18n.t('datepicker.format')
   });
 });
