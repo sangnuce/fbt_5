@@ -143,6 +143,17 @@ en:
       statuses:
         available: "Available"
         unavailable: "Unavailable"
+      show:
+        name: "Name: "
+        price: "Price: "
+        num_people: "Max people: "
+        duration: "Duration: "
+        discount: "Discount: "
+        status: "Status: "
+        description: "Description: "
+        edit: "Edit"
+        delete: "Delete"
+        day: "day"
   number:
     currency:
       format:
