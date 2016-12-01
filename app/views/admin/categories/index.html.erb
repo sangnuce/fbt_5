@@ -6,8 +6,9 @@
 <div class="box-body">
   <div class="row margin-bottom-10">
     <div class="col-md-3">
-      <%= link_to t("admin.categories.new.title"), "#",
-        class: "btn btn-primary button-add" %>
+      <%= link_to t(".add_new"), new_admin_category_path,
+        class: "btn btn-primary button-add", "data-toggle": "modal",
+        "data-target": "#add_new_category" %>
     </div>
     <div class="col-md-9 text-right">
       <%= render "search_form" %>
@@ -29,6 +30,25 @@
           <%= categories_tree_for @categories %>
         </tbody>
       </table>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="add_new_category" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;
+        </button>
+        <h4 class="modal-title"><%= t ".new_category" %></h4>
+      </div>
+      <div class="modal-body">
+        <%= render "form", form_object: @supports.category %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          <%= t ".close" %>
+        </button>
+      </div>
     </div>
   </div>
 </div>

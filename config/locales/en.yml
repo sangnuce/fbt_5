@@ -166,12 +166,16 @@ en:
         title: "Category management"
         name: "Name"
         search: "Search"
+        new_category: "New category"
+        add_new: "Add new"
+        parent: "Parent"
+        select_parent_category: "Select parent category"
+        submit: "Submit"
+        close: "Close"
       category:
         edit: "Edit"
         delete: "Delete"
-      new:
-        title: "Add new"
-        update: "Update"
+        edit_category: "Edit category"
   number:
     currency:
       format:
@@ -295,6 +299,16 @@ en:
       edit_place_success: "Edit place success."
       delete_place_success: "Delete place success."
       place_cant_delete: "Can't delete place."
+    categories:
+      add_category_success: "Add category success."
+      cant_add_category: "Can't add category"
+      edit_category_success: "Edit category success."
+      cant_edit_category: "Can't edit category"
+      delete_category_success: "Delete category success."
+      category_cant_delete: "Can't delete category."
+  users:
+    show:
+      title: "User profile"
   data:
     confirm: "Are you sure?"
   users:

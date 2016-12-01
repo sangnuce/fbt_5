@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:index, :show, :update]
     resources :places, except: [:show]
     resources :tours
-    resources :categories, only: [:index]
+    resources :categories, except: [:show]
   end
 
   resource :user, only: :show
