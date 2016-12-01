@@ -12,6 +12,7 @@ users:
 reviews:
   per_pages_review: 5
   comment_per_page: 5
+  admin_review_per_page: 10
 ckeditor:
   max_attachment_size: 100
   max_picture_size: 3
