@@ -155,6 +155,12 @@ en:
         edit: "Edit"
         delete: "Delete"
         day: "day"
+        start_date: "Start date: "
+      discount_modal:
+        update_discount: "Update discount"
+        discount: "Discount"
+        update: "Update"
+        close: "Close"
     categories:
       index:
         title: "Category management"
@@ -165,6 +171,7 @@ en:
         delete: "Delete"
       new:
         title: "Add new"
+        update: "Update"
   number:
     currency:
       format:
@@ -175,7 +182,7 @@ en:
         format: "%u%n"
   date:
     formats:
-      default: "%d/%m/%y"
+      default: "%d/%m/%Y"
   time:
     zone: 7
     formats:
@@ -254,6 +261,8 @@ en:
       tour_not_found: "Tour not found"
       delete_tour_success: "Delete tour success"
       delete_tour_fail: "Delete tour fail"
+      update_discount_success: "Update discount success"
+      update_discount_fail: "Update discount fail"
     reviews:
       review_not_found: "Review not found"
       create_review_success: "Create review success"
