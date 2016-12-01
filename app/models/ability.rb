@@ -11,6 +11,7 @@ class Ability
       can :manage, Place
       can :manage, Tour
       can :manage, Category
+      can [:read, :destroy], Review
     else
       can :read, User do |u|
         u == user

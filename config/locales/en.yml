@@ -176,6 +176,16 @@ en:
         edit: "Edit"
         delete: "Delete"
         edit_category: "Edit category"
+    reviews:
+      index:
+        title: "Review management"
+        review_title: "Title"
+        user: "User"
+        tour: "Tour"
+        rating: "Rating"
+        type: "Type"
+      review:
+        detail: "Detail"
   number:
     currency:
       format:
