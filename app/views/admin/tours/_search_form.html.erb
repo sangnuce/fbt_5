@@ -2,7 +2,7 @@
   <div class="form-group">
     <div class="form-group">
       <%= select_tag :status_eq,
-        options_for_select(@statuses, params[:status_eq]),
+        options_for_select(@supports.statuses, params[:status_eq]),
         {include_blank: t(".select_status"),
         class: "form-control"} %>
     </div>

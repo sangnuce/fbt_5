@@ -24,4 +24,14 @@ class Supports::TourSupport
   def categories
     @categories ||= Category.all.map {|category| [category.name, category.id]}
   end
+
+  def order_rules
+    @order_rules = [:asc, :desc].map {|rule| [I18n.t("order_rules.#{rule}"),
+      rule]}
+  end
+
+  def statuses
+    @statuses = Tour.statuses.map {|key, value|
+      [I18n.t("admin.tours.statuses.#{key}"), value]}
+  end
 end

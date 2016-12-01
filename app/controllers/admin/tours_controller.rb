@@ -2,10 +2,12 @@ class Admin::ToursController < Admin::ApplicationController
   load_and_authorize_resource
 
   def index
-    @statuses = Tour.statuses.map {|key, value|
-      [t("admin.tours.statuses.#{key}"), value]}
-    @tours = Tour.order_created_desc.search(search_params).result
-      .paginate page: params[:page], per_page: Settings.tours.tours_per_page
+    @supports = Supports::TourSupport.new tour: @tour
+    @tours = Tour.distinct
+      .price_between(params[:from_price], params[:to_price])
+      .rating_order(params[:rating_rule]).price_order(params[:price_rule])
+      .search(search_params).result.paginate page: params[:page],
+      per_page: Settings.tours.tours_per_page
   end
 
   def new
@@ -69,7 +71,7 @@ class Admin::ToursController < Admin::ApplicationController
   private
   def search_params
     params.permit :name_or_category_name_or_places_name_cont,
-      :status_eq
+      :status_eq, :duration_eq, :tour_dates_start_date_eq, :num_people_gteq
   end
 
   def tour_params
