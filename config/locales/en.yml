@@ -225,6 +225,14 @@ en:
         type: "Type"
       review:
         detail: "Detail"
+      show:
+        title: "Review detail"
+        review_for: "Review for"
+        review_by: "Review by"
+        review_at: "Review at"
+        rating: "Rating"
+        average_rating: "%{rate} / %{max_rate}"
+        delete: "Delete"
   number:
     currency:
       format:
@@ -298,7 +306,10 @@ en:
     desc: "Descending"
   flash:
     access_denied: "Access denied."
-    not_found: "Not found"
+    find_category_fail: "Failed to find tour"
+    find_user_fail: "Failed to find user"
+    find_place_fail: "Failed to find place"
+    find_review_fail: "Failed to find review"
     find_tour_fail: "Failed to find tour"
     find_booking_fail: "Failed to find tour booking "
     card_error: "Card that can’t be charged for some reason"
@@ -358,6 +369,9 @@ en:
       cant_edit_category: "Can't edit category"
       delete_category_success: "Delete category success."
       category_cant_delete: "Can't delete category."
+    reviews:
+      review_deleted: "Review deleted."
+      cant_delete_review: "Can't delete review."
   users:
     show:
       title: "User profile"

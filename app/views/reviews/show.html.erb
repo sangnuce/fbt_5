@@ -18,7 +18,7 @@
       <p class="review_at"><strong><%= t ".review_at" %></strong>
         <%= l @review.created_at %></p>
       <p class="rating">
-        <strong><%= t ".average" %></strong>
+        <strong><%= t ".rating" %></strong>
         <i class="fa fa-star ave_star" aria-hidden="true"></i>
         <%= t ".average_rating", rate: @review.rating,
           max_rate: Settings.rates.max_star %>

@@ -8,6 +8,7 @@
       <%= review.review_type %>
     </span>
   </td>
+  <td><%= l review.created_at %></td>
   <td>
     <%= link_to t(".detail"), admin_review_path(review),
       class: "btn btn-info" %>
