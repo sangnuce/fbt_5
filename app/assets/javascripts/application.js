@@ -22,4 +22,5 @@
 //= require ratyrate
 //= require ckeditor/init
 //= require bootstrap-datepicker
+//= require select2.min
 //= require_tree .

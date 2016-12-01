@@ -14,5 +14,6 @@
  *= require skin-blue
  *= require_tree .
  *= require bootstrap-datepicker
+ *= require select2.min
  *= require_self
  */

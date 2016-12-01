@@ -1,4 +1,4 @@
-<% provide :title, t(".title") %>
+<% provide :title, @tour.name %>
 
 <div class="row tour-detail">
   <div class="col-md-12">
@@ -18,9 +18,16 @@
           data: {confirm: t("data.confirm")} %>
       </div>
       <h3 class="title"><%= @tour.name %></h3>
+      <p><strong><%= t ".status" %></strong>
+        <span class="status-<%= @tour.status %>">
+          <%= t "status.#{@tour.status}" %>
+        </span>
+      </p>
+      <p><strong><%= t ".category" %></strong> <%= @tour.category.name %></p>
       <p><strong><%= t ".duration" %></strong>
         <%= pluralize @tour.duration, t(".day") %></p>
-      <p><strong><%= t ".start_date" %></strong>
+      <p><strong><%= t ".start_dates" %></strong></p>
+      <p>
         <% @tour.tour_dates.each do |date| %>
           <span class="tour-date"><%= l date.start_date %></span>
         <% end %>
@@ -32,13 +39,15 @@
         <span class="discount"><%= @tour.discount %> %</span>
         <%= button_tag t(".update"), class: "btn btn-primary",
         data: {toggle: "modal", target: "#myModal"} %></p>
-      <p><strong><%= t ".status" %></strong>
-        <span class="status-<%= @tour.status %>">
-          <%= t "status.#{@tour.status}" %>
-        </span>
-      </p>
     </div>
     <div class="col-md-12">
+      <p><strong><%= t ".tour_places" %></strong>
+        <p class="breadcrumb">
+          <% @tour.tour_places.each do |tour_place| %>
+            <span class="tour-place"><%= tour_place.place.name %></span>
+          <% end %>
+        </p>
+      </p>
       <p><strong><%= t ".description" %></strong></p>
       <p><%= @tour.description.html_safe %></p>
     </div>
