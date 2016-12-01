@@ -45,6 +45,11 @@ class Admin::UsersController < Admin::ApplicationController
     end
   end
 
+  rescue_from ActiveRecord::RecordNotFound do
+    flash[:danger] = t "flash.find_user_fail"
+    redirect_to admin_users_path
+  end
+
   private
   def search_params
     params.permit :name_or_email_cont, :phone_cont

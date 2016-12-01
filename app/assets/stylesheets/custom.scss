@@ -585,6 +585,41 @@ body.admin {
   .field {
     margin-bottom: 10px;
   }
+
+  .review {
+    padding-top: 50px;
+  }
+
+  .review-information {
+    .picture {
+      margin-bottom: 10px;
+      img {
+        width: 100%;
+      }
+    }
+    .information {
+      margin-bottom: 10px;
+      .tour-name {
+        font-size: 16px;
+        font-weight: bold;
+        padding: 5px 0;
+        margin: 0;
+        color: #5054C2;
+      }
+    }
+    .ave_star {
+      color: #f4b400;
+    }
+  }
+
+  .review-details {
+    .review-content {
+      padding-bottom: 10px;
+      .content {
+        padding: 5px 0;
+      }
+    }
+  }
 }
 
 #error_explanation {

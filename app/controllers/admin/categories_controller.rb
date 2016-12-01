@@ -37,6 +37,11 @@ class Admin::CategoriesController < Admin::ApplicationController
     end
   end
 
+  rescue_from ActiveRecord::RecordNotFound do
+    flash[:danger] = t "flash.find_category_fail"
+    redirect_to admin_categories_path
+  end
+
   private
   def search_params
     params.permit :name_cont

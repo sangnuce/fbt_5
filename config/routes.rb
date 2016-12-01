@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :places, except: [:show]
     resources :tours
     resources :categories, except: [:show]
-    resources :reviews, only: :index
+    resources :reviews, only: [:index, :show, :destroy]
   end
 
   resource :user, only: :show

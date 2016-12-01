@@ -6,9 +6,4 @@ class Admin::ApplicationController < ActionController::Base
     flash[:error] = t "flash.access_denied"
     redirect_to root_path
   end
-
-  rescue_from ActiveRecord::RecordNotFound do
-    flash[:danger] = t "flash.not_found"
-    redirect_to admin_users_path
-  end
 end

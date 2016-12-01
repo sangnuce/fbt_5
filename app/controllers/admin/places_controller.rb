@@ -51,6 +51,11 @@ class Admin::PlacesController < Admin::ApplicationController
     end
   end
 
+  rescue_from ActiveRecord::RecordNotFound do
+    flash[:danger] = t "flash.find_place_fail"
+    redirect_to admin_places_path
+  end
+
   private
   def place_params
     params.require(:place).permit :name, :picture, :place_type, :parent_id
