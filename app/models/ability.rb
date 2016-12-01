@@ -27,5 +27,8 @@ class Ability
         booking.user == user
       end
     end
+    can [:read, :update], Notification do |notification|
+      notification.notified == user
+    end
   end
 end

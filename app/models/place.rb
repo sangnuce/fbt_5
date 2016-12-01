@@ -6,7 +6,7 @@ class Place < ApplicationRecord
   acts_as_tree order: "created_at DESC"
 
   has_many :tour_places, dependent: :destroy
-  has_many :tours, through: :tour_places
+  has_many :tours, through: :tour_places, dependent: :destroy
 
   validates :name, presence: true
   validates :picture, presence: true, on: :create

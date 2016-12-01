@@ -522,3 +522,15 @@ en:
     error_picture_size: "Should be less than 5MB"
   datepicker:
     format: "yyyy-mm-dd"
+  notifications:
+    index:
+      title: "User notifications"
+      no_notifications: "You have no notifications"
+      mark_as_read: "Mark all as read"
+    notification:
+      comment: "commented on"
+      like: "liked"
+      rate: "rated"
+      to_comment: "your comment"
+      to_review: "your review"
+      ago: "ago"

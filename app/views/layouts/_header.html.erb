@@ -28,7 +28,17 @@
             </div>
           <% end %>
         </li>
-        <li><%= link_to t(".home"), root_path %></li>
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to notifications_path do %>
+              <%= t ".notifications" %>
+              <span class="badge count_notifications <%= 'label-danger' if current_user
+                .new_notifications.size > 0 %>">
+                <%= current_user.new_notifications.size %>
+              </span>
+            <% end %>
+          </li>
+        <% end %>
         <li><%= link_to t(".tours"), tours_path %></li>
         <% if user_signed_in? %>
           <li><%= link_to t(".profile"), user_path %></li>

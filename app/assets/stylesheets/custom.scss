@@ -457,6 +457,22 @@ body.customer {
   .edit-review {
     padding: 5 px;
   }
+
+  .notification {
+    background: #EEE;
+    padding: 10px;
+    &:hover {
+      border: 1px solid #5DE053;
+    }
+  }
+
+  .notification.new {
+    background: #F7FC93;
+  }
+
+  .count_notifications {
+    font-size: 14px;
+  }
 }
 
 body.admin {

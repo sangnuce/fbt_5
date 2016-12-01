@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   root "static_pages#show", page: "home"
   post "/rate" => "rater#create", as: :rate
+  post "/notifications/mark_as_read", to: "notifications#update"
 
   namespace :admin do
     resources :users
@@ -31,4 +32,5 @@ Rails.application.routes.draw do
   resources :likes, only: [:create, :destroy]
   resources :bookings, only: [:index, :show, :update]
   resources :reviews, only: :index
+  resources :notifications, only: :index
 end

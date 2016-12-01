@@ -8,6 +8,8 @@ class Review < ApplicationRecord
 
   has_many :likes, as: :likeable, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :notifications, as: :notifiable, dependent: :destroy
+  has_many :notifications, as: :target, dependent: :destroy
 
   enum review_type: [:place, :food, :news]
 

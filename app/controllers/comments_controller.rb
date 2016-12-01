@@ -19,6 +19,7 @@ class CommentsController < ApplicationController
   end
 
   def create
+    parent = Comment.new
     if params[:comment][:parent_id].to_i > 0
       parent = Comment.find_by id: params[:comment].delete(:parent_id)
       @comment = parent.children.build comment_params
@@ -26,6 +27,14 @@ class CommentsController < ApplicationController
     end
     @comment.user = current_user
     if @comment.save
+      if parent.user.present? && !parent.user.current_user?(current_user)
+        current_user.active_notifications.create notified: parent.user,
+          notifiable: @comment, target: parent
+      end
+      unless @comment.review.user.current_user? current_user
+        current_user.active_notifications.create notified: @comment.review.user,
+          notifiable: @comment, target: @comment.review
+      end
       load_supports
       respond_to do |format|
         format.html do

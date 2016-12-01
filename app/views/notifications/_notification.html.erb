@@ -1,0 +1,13 @@
+<p class="notification <%= 'new' if notification.is_new? %>">
+  <strong><span class="notifier"><%= notification.notifier.name %></span></strong>
+  <%= t ".#{notification.notifiable.class.name.downcase}" %>
+  <% if notification.target.class.name == "Comment" %>
+    <%= link_to t(".to_comment"),
+      tour_review_path(notification.target.review.tour,
+      notification.target.review, anchor: "comment-#{notification.target.id}") %>
+  <% else %>
+    <%= link_to t(".to_review"), tour_review_path(notification.target.tour,
+      notification.target) %>
+  <% end %>
+  <em class="pull-right"><%= time_ago_in_words notification.created_at %> <%= t ".ago" %></em>
+</p>

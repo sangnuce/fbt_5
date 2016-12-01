@@ -7,6 +7,10 @@ class LikesController < ApplicationController
   def create
     @like = @likeable.likes.build user: current_user
     if @like.save
+      unless @likeable.user.current_user? current_user
+        current_user.active_notifications.create notified: @likeable.user,
+          notifiable: @like, target: @likeable
+      end
       load_support
       flash[:success] = t "flash.likes.like_success"
     else

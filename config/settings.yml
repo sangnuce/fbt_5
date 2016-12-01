@@ -23,3 +23,5 @@ bookings:
   per_page_bookings: 10
 pictures:
   max_picture_size: 5
+notifications:
+  notifications_per_page: 20

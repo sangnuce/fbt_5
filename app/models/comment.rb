@@ -6,7 +6,9 @@ class Comment < ApplicationRecord
   belongs_to :review
   belongs_to :user
 
-  has_many :likes, as: :likeable
+  has_many :likes, as: :likeable, dependent: :destroy
+  has_many :notifications, as: :notifiable, dependent: :destroy
+  has_many :notifications, as: :target, dependent: :destroy
 
   scope :order_desc, ->{order created_at: :desc}
 

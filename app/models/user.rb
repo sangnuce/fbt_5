@@ -18,6 +18,10 @@ class User < ApplicationRecord
   has_many :bank_cards
   has_many :tour_dates, through: :bookings
   has_many :tours, through: :tour_dates
+  has_many :active_notifications, class_name: Notification.name,
+    foreign_key: "notifier_id", dependent: :destroy
+  has_many :passive_notifications, class_name: Notification.name,
+    foreign_key: "notified_id", dependent: :destroy
 
   scope :all_customer, ->{where is_admin: false}
   scope :order_desc, ->{order created_at: :desc}
@@ -28,6 +32,10 @@ class User < ApplicationRecord
 
   def liked? likeable
     self.likes.find_by(likeable: likeable).present?
+  end
+
+  def new_notifications
+    self.passive_notifications.new_notifications
   end
 
   class << self
