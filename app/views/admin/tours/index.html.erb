@@ -5,13 +5,18 @@
 </div>
 <div class="box-body">
   <div class="row margin-bottom-10">
-    <div class="col-md-3">
+    <div class="col-md-4">
       <%= link_to t(".add_tour"), new_admin_tour_path,
         class: "btn btn-primary button-add" %>
+      <%= button_tag t(".filter_tour"), class: "btn btn-warning button-add",
+        data: {toggle: "collapse", target: "#filter-form"} %>
     </div>
-    <div class="col-md-9 text-right">
+    <div class="col-md-8 text-right">
       <%= render "search_form" %>
     </div>
+  </div>
+  <div class="row collapse" id="filter-form">
+    <%= render "filter_form" %>
   </div>
   <div class="row">
     <div class="col-md-12">

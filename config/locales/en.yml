@@ -142,6 +142,7 @@ en:
       index:
         title: "Tours management"
         add_tour: "Add tour"
+        filter_tour: "Filter tour"
         name: "Name"
         price: "Price"
         num_people: "Max people"
@@ -200,6 +201,19 @@ en:
         remove: "Remove"
       edit:
         title: "Edit tour"
+      filter_form:
+        tour_place_directory: "Tour or directory or place name"
+        start_date: "Start date"
+        num_people: "Number of people"
+        search: "Search"
+        from: "From"
+        to: "To"
+        price: "Price"
+        duration: "Duration"
+        order: "Order by"
+        rating: "Rating"
+        days: "day(s)"
+        per_person: "per person"
     categories:
       index:
         title: "Category management"
