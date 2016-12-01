@@ -67,7 +67,7 @@
       <% end %>
       </div>
     <% end %>
-    <% unless @booking.reject? %>
+    <% unless @booking.reject? || @booking.approve? %>
       <div class="con-md-6">
       <%= form_for @booking do |f| %>
         <%= f.hidden_field :is_cancel, value: true %>

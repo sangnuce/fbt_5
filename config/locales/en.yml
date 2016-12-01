@@ -81,10 +81,21 @@ en:
         created_at: "Created at"
       booking:
         view: "Detail"
+        cancelling: "cancelling"
       show:
         title: "Booking Detail"
         update_status: "Update status"
         return: "Return"
+        contact_name: "Contact name:"
+        contact_phone: "Contact phone:"
+        contact_address: "Contact address:"
+        num_tourist: "Number tourist:"
+        total_price: "Total price:"
+        tour_booking: "Tour booking:"
+        start_date: "Start date:"
+        status: "Status:"
+        cancel_request: "Cancel request:"
+        created_at: "Created at:"
       filter_form:
         filter: "Filter"
         all_status: "All status"
@@ -99,6 +110,7 @@ en:
         tour_booking: "Tour booking:"
         start_date: "Start date:"
         status: "Status:"
+        cancel_request: "Cancel request:"
         created_at: "Created at:"
     places:
       types:
@@ -192,7 +204,7 @@ en:
         unit: "$"
         delimiter: ","
         separator: "."
-        precision: 0
+        precision: 1
         format: "%u%n"
   date:
     formats:
@@ -304,6 +316,7 @@ en:
       booking_approved: "Booking request approved"
       booking_canceled: "Booking request canceled"
       booking_cancel_fail: "Booking request cancel fail"
+      booking_cannot_approve: "Booking cannot approve"
     places:
       add_place_success: "Add place success."
       edit_place_success: "Edit place success."
@@ -398,6 +411,7 @@ en:
     booking:
       day: "day"
       view: View detail
+      cancelling: "cancelling"
     show:
       title: "Booking request"
       contact_name: "Contact name:"
@@ -410,7 +424,7 @@ en:
       status: "Status:"
       created_at: "Created at:"
       payment_continue: "Payment continue"
-      cancel_tour: "Cancel tour"
+      cancel_tour: "Cancel now"
       close: "Close"
       content_confirm: "Are your sure to cancel this tour?"
   payments:
@@ -444,6 +458,7 @@ en:
       submit_payment: "Submit Payment"
   booking:
     number_tourist: "Number-tourist must be number"
+    max_tourist: "Number-tourist cannot great than max people"
     payment: "Payment"
     tourist: "tourist"
   picture:

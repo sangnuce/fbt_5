@@ -18,18 +18,26 @@ class Admin::BookingsController < Admin::ApplicationController
   end
 
   def update
-    if @booking.update_attributes booking_params
-      if @booking.reject?
-        @booking.payment.process_refund
-        flash[:success] = t "flash.bookings.booking_rejected"
-      else
-        flash[:success] = t "flash.bookings.booking_approved"
-      end
+    status_before = @booking.status
+    if @booking.waiting_pay? && booking_params[:status] == "approve"
+      flash[:danger] = t "flash.bookings.booking_cannot_approve"
       redirect_to admin_bookings_path
     else
-      load_status
-      flash[:danger] = t "flash.bookings.booking_update_fail"
-      render :show
+      if @booking.update_attributes booking_params
+        if @booking.reject? && status_before == "waiting_pay"
+          flash[:success] = t "flash.bookings.booking_canceled"
+        elsif @booking.reject? && status_before == "paid"
+          @booking.payment.process_refund
+          flash[:success] = t "flash.bookings.booking_rejected"
+        else
+          flash[:success] = t "flash.bookings.booking_approved"
+        end
+        redirect_to admin_bookings_path
+      else
+        load_status
+        flash[:danger] = t "flash.bookings.booking_update_fail"
+        render :show
+      end
     end
   end
 

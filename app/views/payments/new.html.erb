@@ -84,10 +84,15 @@
               <td><%= @booking.num_tourist %></td>
             </tr>
             <tr>
+              <th><%= t ".discount" %></th>
+              <td><%= @booking.tour_date.tour.discount %>%</td>
+            </tr>
+            <tr>
               <th><%= t ".total" %></th>
               <td>
                 <label class="label bg-red">
-                <%= number_to_currency @booking.total_price %></label></td>
+                  <%= number_to_currency @booking.total_price %>
+                </label></td>
             </tr>
           </table>
         </div>

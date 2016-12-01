@@ -47,9 +47,16 @@ $(document).on('turbolinks:load', function(){
   $('.num-tourist').change(function(){
     $num_tourist = $('.num-tourist').val();
     $price = $('.price_per_person').val();
+    $max_tourist = $('#max_people').val();
+    console.log($num_tourist+" "+$max_tourist)
     if($.isNumeric($num_tourist)){
-      $total_price = $num_tourist * $price
-      $('.total_price').val($total_price);
+      if($num_tourist <= $max_tourist){
+        $total_price = $num_tourist * $price
+        $('.total_price').val($total_price);
+      }else{
+        alert(I18n.t('booking.max_tourist'));
+        $('.num-tourist').val('');
+      }
     }else{
       alert(I18n.t('booking.number_tourist'));
       $('.num-tourist').val('');
